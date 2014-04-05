@@ -1,0 +1,10 @@
+name: risk.test
+description: A sample Polymer application
+dependencies:
+  morph: ">=0.8.2 <0.9.0"
+  risk:
+    # Change here target directory if you start from a new step
+    path: ../samples/s1_basics
+dev_dependencies:
+  unittest: any
+  mock: any
