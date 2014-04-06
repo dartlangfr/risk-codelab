@@ -1,3 +1,31 @@
+.vcenter {
+  vertical-align: middle;
+}
+
+#avatars img {
+  width: 48px;
+}
+
+#history img {
+  width: 20px;
+}
+
+#history .pre-scrollable {
+  max-height: 100px;
+}
+
+#battle img {
+  width: 48px;
+}
+
+#battle .country .riskicon {
+  font-size: 7em;
+}
+
+#battle .army .riskicon-soldier {
+  font-size: 2em;
+}
+
 @font-face {
   font-family: 'Risk';
 

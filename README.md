@@ -30,6 +30,7 @@ This code lab has the following sections:
 - [Dart API Reference][3]
 - [Polymer.dart][4]
 - [Polymer.dart examples][5]
+- [Polymer JavaScript project][6]
 
 
 ### Credits
@@ -50,4 +51,5 @@ _Thanks to the [+DartlangFr](http://gplus.to/dartlangfr) team._
   [3]: http://api.dartlang.org/docs/channels/stable/latest/
   [4]: https://www.dartlang.org/polymer-dart/
   [5]: https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web
+  [6]: http://www.polymer-project.org/
   [feedback]: TODO

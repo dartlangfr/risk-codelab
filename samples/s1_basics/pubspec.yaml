@@ -2,6 +2,7 @@ name: risk
 description: A two hour exercise, based on the Risk game, to learn Polymer.dart.
 dependencies:
   polymer: 0.9.5
+  browser: any
   bootstrap_for_pub: any
   morph: any
   http_server: any
