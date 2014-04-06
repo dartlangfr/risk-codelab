@@ -1,9 +1,9 @@
 name: risk
-description: A sample Polymer application
+description: A two hour exercise, based on the Risk game, to learn Polymer.dart.
 dependencies:
-  polymer: any
-  bootstrap_for_pub: ">=3.1.0+2 <4.0.0"
-  morph: ">=0.8.2 <0.9.0"
+  polymer: 0.9.5
+  bootstrap_for_pub: any
+  morph: any
   http_server: any
 dev_dependencies:
   unittest: any
