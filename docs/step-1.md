@@ -8,10 +8,13 @@ you run the app.
 _**Keywords**: main, pub, Dartium, Polymer_
 
 
-### Use Dart Editor to open the app's directory
+### Use Dart Editor to open the server app's directories
 
 &rarr;  In Dart Editor, use **File > Open Existing Folder...**
 to open the directory `risk-codelab-master/samples/s1-basics`.
+
+&rarr;  Open the `bin` directory by
+clicking the little arrow ► to the left of its name.
 
 &rarr;  Open the `web` directory by
 clicking the little arrow ► to the left of its name.
@@ -33,9 +36,11 @@ This code lab is tied to a specific version of Polymer.dart.)
 
 The initial app uses the following source files:
 * `pubspec.yaml`: The app's description and dependencies, used by the Dart package manager
-* `web/index.html`: The app's template
-* `web/main.dart`: Custom app logic
-* `web/piratebadge.css`: The app's appearance (we'll skip this for now)
+* `bin/main.dart`: The server app
+* `lib/`: Public libraries shared between server and client app
+* `test/`: The tests scripts
+* `web/index.html`: The web app's template
+* `web/css`, `web/fonts` and `web/img`: The app's appearance (we'll skip this for now)
 
 &rarr;  In Dart Editor, open `pubspec.yaml` (in the top directory) by
 double-clicking its filename.
