@@ -1,0 +1,8 @@
+name: risk_engine
+description: Provide logic for the two hour exercise Risk code lab.
+dependencies:
+  morph: any
+  http_server: any
+dev_dependencies:
+  unittest: any
+  mock: any
