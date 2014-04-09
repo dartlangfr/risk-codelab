@@ -97,7 +97,7 @@ Key information:
   [pub documentation](https://www.dartlang.org/tools/pub/).
 
 
-#### index.html
+#### web/index.html
 
 The first version of this HTML file contains no Dart and no Polymer components.
 However, it does set you up to add Polymer components among the next steps.
@@ -133,7 +133,7 @@ However, it does set you up to add Polymer components among the next steps.
 </html>
 ```
 
-#### main.dart
+#### bin/main.dart
 
 This version of the server app does nothing, except printing `Hello World!` in the console.
 
@@ -158,7 +158,7 @@ Key information:
 
 ### Run the web app in Dartium
 
-&rarr; Right-click `index.html` and select **Run in Dartium**.
+&rarr; Right-click `web/index.html` and select **Run in Dartium**.
 
 ![Click the run button](img/s1-run-in-dartium.png).
 
@@ -169,11 +169,11 @@ You should see the _Risk_ navigation bar and a TO DO comment.
 
 ### Run the server app
 
-&rarr; Right-click `main.dart` and select **Run**.
+&rarr; Right-click `bin/main.dart` and select **Run**.
 
 ![Click the run button](img/s1-run-in-dartium.png).
 
-Dart Editor launches `main.dart` script as a standalone app.
+Dart Editor launches `bin/main.dart` script as a standalone app.
 Standard output is printed in a console window inside the IDE.  
 You should see _Hello World!_.
 
