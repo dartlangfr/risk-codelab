@@ -1,21 +1,5 @@
-## Step 2: Dart classes
+part of risk;
 
-In this step, you create your first classes and run tests on it.
-
-**Note**: Throughout this code lab, continue to edit the files in `s1_basics`.
-You can use the files in the other `samples` subdirectories to compare to your code
-or to recover if you get off track.
-
-_**Keywords**: class, test_
-
-
-### Create `Country` class
-
-Edit `lib/src/map.dart`, as follows.
-
-&rarr; Add the following class:
-
-```Dart
 /// Country class.
 class Country {
   /// The country id.
@@ -23,47 +7,14 @@ class Country {
   /// The country neighbours.
   final List<String> neighbours;
 
+  /// Default constructor
   Country(this.id, this.neighbours);
 }
-```
 
-You've just implemented a class!
-
-Key information:
-
-* It defines `Country` class with two fields: `id` which is the country Id and `neighbours` which is the list of country neighbours.
-* The fields are `final`, it means that they can only be initialized once, in constructors.
-* The constructor `Country(this.id, this.neighbours);` use syntactic sugar for setting `id` and `neighbours` before the constructor body runs.
-* Lines starting with `///` or `/**` are documentation comments, used to generate documentation.
-
-
-### Create `Continent` class
-
-Continue to edit `lib/src/map.dart`.
-
-&rarr; Implements the `Continent`:
-* The `Continent` class has three fields `id`, `bonus` and `countries`:
-  * `id` is the continent id.
-  * `bonus` is the reinforcement bonus given if the same player owns all continent countries.
-  * `countries` is the countries of this continent.
-* Like `Country`, fields must be immutable.
-* The `Continent` class must be instanciable with the following instruction:
-
-```Dart
-new Continent('australia', 2, ["eastern_australia", "indonesia"])
-```
-
-### Add `Country` and `Continent` constants
-
-Edit `lib/src/map.dart`, as follows.
-
-&rarr; Add the following top-level constants:
-
-```Dart
 /// List of all existing countries
 final List<Country> COUNTRIES = [//
   // australia
-  new Country('eastern_australia', ['western_australia', 'new_guinea', 'eastern_australia']), //
+  new Country('eastern_australia', ['western_australia', 'new_guinea']), //
   new Country('indonesia', ['siam', 'new_guinea', 'western_australia']), //
   new Country('new_guinea', ['indonesia', 'eastern_australia', 'western_australia']), //
   new Country('western_australia', ['eastern_australia', 'indonesia', 'new_guinea']), //
@@ -109,79 +60,32 @@ final List<Country> COUNTRIES = [//
   new Country('mongolia', ['china', 'siberia', 'irkutsk', 'kamchatka', 'japan']), //
   new Country('siam', ['india', 'china', 'indonesia']), //
   new Country('siberia', ['yakursk', 'irkutsk', 'mongolia', 'china', 'ural']), //
-  new Country('yakursk', ['kamchatka', 'siberia', 'irkutsk', 'eastern_australia'])//
+  new Country('yakursk', ['kamchatka', 'siberia', 'irkutsk'])//
 ];
 
 /// All [Country]s indexed by country id
 final Map<String, Country> COUNTRY_BY_ID = new Map.fromIterable(COUNTRIES, key: (country) => country.id);
 
+/// Continent class.
+class Continent {
+  /// The continent id.
+  final String id;
+  /// The reinforcement bonus given if the same player owns all continent countries.
+  final int bonus;
+  /// The countries of this continent.
+  final List<String> countries;
+
+  /// Default constructor
+  Continent(this.id, this.bonus, this.countries);
+}
+
 /// List of all existing continents
 final List<Continent> CONTINENTS = [//
-  new Continent('australia', 2, ["eastern_australia", "indonesia", "new_guinea"]), //
+  new Continent('australia', 2, ["eastern_australia", "indonesia", "new_guinea", "western_australia"]), //
   new Continent('north_america', 5, ["alaska", "alberta", "central_america", "eastern_united_states", "greenland", "northwest_territory", "ontario", "quebec",
       "western_united_states"]), //
   new Continent('south_america', 2, ["argentina", "brazil", "peru", "venezuela"]), //
   new Continent('africa', 3, ["congo", "egypt", "east_africa", "madagascar", "north_africa", "south_africa"]), //
   new Continent('europe', 5, ["great_britain", "iceland", "northern_europe", "scandinavia", "southern_europe", "ukraine", "western_europe"]), //
-  new Continent('asia', 7, ["afghanistan", "china", "india", "irkutsk", "japan", "kamchatka", "ural", "middle_east", "mongolia", "siam", "siberia", "yakursk", "eastern_australia"]),//
+  new Continent('asia', 7, ["afghanistan", "china", "india", "irkutsk", "japan", "kamchatka", "ural", "middle_east", "mongolia", "siam", "siberia", "yakursk"]),//
 ];
-```
-
-Key information:
-
-* Those constants defines the countries and continents for the Risk game.
-* `COUNTRY_BY_ID` is a [Map](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-core.Map) built from `COUNTRIES`. It helps to find quickly a `Country` by its `id`.
-* **Some errors are hidden in those constants, they need to be fixed!**
-
-### Run tests on the implementations
-
-To check if `Country` and `Continent` classes are well implemented and to fix errors in constants,
-it's a good pratice to run unit tests.
-
-Open `test/s1_map_test.dart`.
-
-&rarr; Get familiar with the code:
-
-```Dart
-library risk.map.test;
-
-import 'package:unittest/unittest.dart';
-import '../lib/risk.dart';
-
-main() {
-  test('Country should be instanciable', () {
-    var country = new Country('eastern_australia', ['western_australia', 'new_guinea']);
-    expect(country, isNotNull);
-    expect(country.id, equals('eastern_australia'));
-    expect(country.neighbours, equals(['western_australia', 'new_guinea']));
-  });
-
-  group('COUNTRIES', () {
-    test('should have 42 countries', () { ... });
-    // ...
-  });
-
-  group('COUNTRY_BY_ID', () { ... });
-  group('CONTINENTS', () { ... });
-}
-```
-
-&rarr; Then run tests: right-click `test/s1_map_test.dart` and select **Run**.  
-&rarr; **You should have test failures in console, fix classes and/or constants**.
-
-Key information:
-
-* Note how a test is written: we wrap it in a call to `test(String testName, functionToTest);`.
-* Within the function we are testing, we write assertions, using `expect(actualValue, expectedValueMatcher);`.
-* It can be helpful to group similar tests together, which can be done with `group()`.
-
-
-### Learn more
- - [Dart Language - Classes](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html#classes)
- - [Dart Language - Documentation Comments](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html#comments-doc)
- - [Unit Testing with Dart](https://www.dartlang.org/articles/dart-unit-tests/)
-
-### Problems?
-Check your code against the files in [s2_binding](../samples/s2_binding).
-
-## [Home](../README.md) | [< Previous](step-1.md) | [Next >](step-3.md)
