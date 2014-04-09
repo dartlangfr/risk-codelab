@@ -6,6 +6,8 @@ dependencies:
   bootstrap_for_pub: any
   morph: any
   http_server: any
+  risk_engine:
+    path: ../../risk_engine
 dev_dependencies:
   unittest: any
   mock: any
