@@ -33,6 +33,7 @@ Key information:
 
 * It defines `Country` class with two fields: `id` which is the country Id and `neighbours` which is the list of country neighbours.
 * The fields are `final`, it means that they can only be initialized once, in constructors.
+* Generic types allow to define a `List` of `String` with `List<String>`.
 * The constructor `Country(this.id, this.neighbours);` use syntactic sugar for setting `id` and `neighbours` before the constructor body runs.
 * Lines starting with `///` or `/**` are documentation comments, used to generate documentation.
 
@@ -56,6 +57,8 @@ main() {
 
 * The `import` is used to import a namespace from one library in the local scope.
 * The `../lib/risk.dart` import is a library defined in the `lib` directory. `lib/src/map.dart` is already part of this library.
+* Either `'string'` or `"string"` can be used to define a `String`.
+* `['western_australia', 'new_guinea']` allows to easily define `List`.
 * `var` is a way to declare a variable without specifying its type.
 * `$neighbours` and `${country.id}` are string interpolations. It includes the variable or expression’s string equivalent inside of a string literal.
 
@@ -65,9 +68,9 @@ Continue to edit `lib/src/map.dart`.
 
 &rarr; Implements the `Continent`:
 * The `Continent` class has three fields `id`, `bonus` and `countries`:
-  * `id` is the continent id.
-  * `bonus` is the reinforcement bonus given if the same player owns all continent countries.
-  * `countries` is the countries of this continent.
+  * `id` (a `String`) is the continent id.
+  * `bonus` (an `int`) is the reinforcement bonus given if the same player owns all continent countries.
+  * `countries` (a `List` of `String`) is the list of the ids of the countries of this continent.
 * Like `Country`, fields must be immutable.
 * The `Continent` class must be instanciable with the following instruction:
 
@@ -195,6 +198,7 @@ Key information:
 
 * Note how a test is written: we wrap it in a call to `test(String testName, functionToTest);`.
 * Within the function we are testing, we write assertions, using `expect(actualValue, expectedValueMatcher);`.
+* The `unittest` package provides a set of built-in `Matcher` like `equals(xxx)`, `isPositive`, `isNotNull`, `isTrue`...
 * It can be helpful to group similar tests together, which can be done with `group()`.
 
 
