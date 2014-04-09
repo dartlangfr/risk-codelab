@@ -36,6 +36,28 @@ Key information:
 * The constructor `Country(this.id, this.neighbours);` use syntactic sugar for setting `id` and `neighbours` before the constructor body runs.
 * Lines starting with `///` or `/**` are documentation comments, used to generate documentation.
 
+### Instantiate a `Country` class
+
+Edit `bin/main.dart`, as follows.
+
+&rarr; Instantiate a `Country` class and run this code:
+
+```Dart
+library risk.main;
+
+import '../lib/risk.dart';
+
+main() {
+  Country country = new Country('eastern_australia', ['western_australia', 'new_guinea']);
+  var neighbours = country.neighbours;
+  print("Hello ${country.id} and $neighbours!");
+}
+```
+
+* The `import` is used to import a namespace from one library in the local scope.
+* The `../lib/risk.dart` import is a library defined in the `lib` directory. `lib/src/map.dart` is already part of this library.
+* `var` is a way to declare a variable without specifying its type.
+* `$neighbours` and `${country.id}` are string interpolations. It includes the variable or expression’s string equivalent inside of a string literal.
 
 ### Create `Continent` class
 

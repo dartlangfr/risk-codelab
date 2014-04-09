@@ -138,10 +138,23 @@ However, it does set you up to add Polymer components among the next steps.
 This version of the server app does nothing, except printing `Hello World!` in the console.
 
 ```Dart
+library risk.main;
+
 main() {
   print("Hello World!");
 }
 ```
+
+Key information:
+* This file contains the entry point for the server app—the `main()` function.
+* The `main()` function is a top-level function.
+* A top-level variable or function is one that is declared outside
+  a class definition.
+* The `library` line isn't necessary now,
+  but it will come in handy later when we add more Dart files to this app.
+* By convention, library names begin with the package name (`risk`),
+  followed by a dot (`.`),
+  followed by a library-specific name (`main`).
 
 ### Run the web app in Dartium
 
