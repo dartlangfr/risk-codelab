@@ -96,6 +96,9 @@ Key information:
 * For more information about the pub package manager, see the
   [pub documentation](https://www.dartlang.org/tools/pub/).
 
+#### packages
+
+The `packages` folder contains the dependencies grabbed by `pub get`. You can see packages that you not directly defined as dependency in `pubspec.yaml`. `pub` has also grab the transitive dependencies (dependencies needed by dependencies).
 
 #### web/index.html
 
