@@ -154,13 +154,13 @@ Continue to edit `src/game.dart`.
 &rarr; Implements those methods and run tests in `test/s3_game.dart` to check if your implementation is correct.
 
 Key information:
-* `@override` **TODO...**
+* `@override` is an annotation that marks an instance member as overriding a superclass member with the same name.
 * `allCountryIds` returns all existing countries. Use `COUNTRIES` or `COUNTRY_BY_ID` to get them.
-* `countryNeighbours` computes the number of reinforcement armies at the beginning of a player turn. Follow the Risk rules (TODO link).
-* `computeAttackerLoss` takes rolled dices in parameter in descending order. It returns the number of lost armies for the attacker according to the Risk rules (TODO link).
-* `computeReinforcement` computes the number of reinforcement armies at the beginning of a player turn. Follow the Risk rules (TODO link) and use the [collection API](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-core.Iterable).
+* `countryNeighbours` computes the number of reinforcement armies at the beginning of a player turn. Follow the [Risk rules](rules.md).
+* `computeAttackerLoss` takes rolled dices in parameter in descending order. It returns the number of lost armies for the attacker according to the [Risk rules](rules.md).
+* `computeReinforcement` computes the number of reinforcement armies at the beginning of a player turn. Follow the [Risk rules](rules.md) and use the [collection API](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-core.Iterable).
   Advise: create a method `playerCountries` that returns the country ids owned by the player.
-* `update` updates the game state in function of the incoming event. Follow the Events bible (TODO link) and run the tests.
+* `update` updates the game state in function of the incoming event. Follow the [Events bible](events.md) and run the tests.
 
 ### Learn more
  - [Dart Language - Libraries](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html#libraries)
