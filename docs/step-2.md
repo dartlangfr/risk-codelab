@@ -135,6 +135,7 @@ final List<Country> COUNTRIES = [//
   new Country('siam', ['india', 'china', 'indonesia']), //
   new Country('siberia', ['yakursk', 'irkutsk', 'mongolia', 'china', 'ural']), //
   new Country('yakursk', ['kamchatka', 'siberia', 'irkutsk', 'eastern_australia'])//
+  new Country('eastern_australia', ['western_australia', 'new_guinea', 'eastern_australia']), //
 ];
 
 /// All [Country]s indexed by country id
@@ -182,7 +183,7 @@ main() {
   });
 
   group('COUNTRIES', () {
-    test('should have 42 countries', () { ... });
+    test('for each country should have at least 1 neighbour', () { ... });
     // ...
   });
 
@@ -200,7 +201,15 @@ Key information:
 * Within the function we are testing, we write assertions, using `expect(actualValue, expectedValueMatcher);`.
 * The `unittest` package provides a set of built-in `Matcher` like `equals(xxx)`, `isPositive`, `isNotNull`, `isTrue`...
 * It can be helpful to group similar tests together, which can be done with `group()`.
+* Use the `solo_` prefix to quickly run just one unit test or one group: `solo_test(...)` or `solo_group(...)`
+* Use the `skip_` prefix to exclude unit tests or groups you don't want to run: `skip_test(...)` or `skip_group(...)`
 
+### Write a test
+
+Open `test/s1_map_test.dart`.
+
+&rarr; Test that `COUNTRIES` and `COUNTRY_BY_ID` have exactly 42 countries.  
+&rarr; Fix `COUNTRIES` removing the duplicated country.
 
 ### Learn more
  - [Dart Language - Classes](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html#classes)
