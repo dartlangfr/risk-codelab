@@ -1,4 +1,4 @@
-## Step 3: Dart algorithm
+## Step 3: Risk Game
 
 In this step, you implement few logical functions and the game state.
 
@@ -19,7 +19,7 @@ part 'src/map.dart';
 part 'src/game.dart';
 ```
 
-The editor complains about inexistant `src/game.dart` file. We'll create it in the section below.
+The editor complains about inexistant `src/game.dart` file. We'll create it in the section below.  
 It also complains about unused imports. Don't worry about that, we'll be using `dart:math` and the engine later in this step.
 
 Create a new file `src/game.dart`, as follows.
@@ -35,7 +35,7 @@ You've just added a new implementation file!
 Key information:
 
 * `library risk;` declares that this is a library named `risk`.
-* `part` adds an implementation file in the library located by the given path.
+* `part 'src/game.dart';` adds an implementation file in the library located by the given path.
 * `part of risk;` indicates that the file is part of the library `risk` and that it shares the same scope.
 
 ### Add state classes
@@ -99,27 +99,74 @@ class RiskGameStateImpl implements RiskGameState {
 
 The editor complains about missing concrete implementation. We'll implement them right after.
 
-Those classes are basics implementation of game state.
-* `CountryState` stores the state of a country: the player who owns the country and the number of armies in place.
-* `PlayerState` stores the state of a player: the player's information, the number of armies he get at the beginning of his turn and if he is dead.
-* `RiskGameState` stores the state of the whole game: the board with the countries states, the players states and the progress of the game.
-
 Key information:
 
+* `CountryState` stores the state of a country: the player who owns the country and the number of armies in place.
+* `PlayerState` stores the state of a player: the player's information, the number of armies he get at the beginning of his turn and if he's dead.
+* `RiskGameState` stores the state of the whole game: the board with the countries states, the players states and the progress of the game.
 * A class implements one or more interfaces by declaring them in an `implements` clause and then providing the APIs required by the interfaces. 
 * You can explore the source code of the interfaces: right click on the interface name (e.g. `RiskGameState`), then _Open Declaration_. 
 
-### `RiskGameState` implementation
+### Implementation of `RiskGameState`
 
 `RiskGameState` also provides few logical functions needed for the game engine and it is also capable of updating it self for an incoming `EngineEvent`.
 
-...
+Continue to edit `src/game.dart`.
 
+&rarr; Right click on the `RiskGameStateImpl` class name, then _Quick Fix_ and select _Create 5 missing override(s)_. It should add new methods in the class:
+
+```Dart
+  // TODO: implement allCountryIds
+  /// Returns all possible countryIds
+  @override
+  List<String> get allCountryIds => null;
+
+  /// Returns neighbours ids for the given [countryId].
+  @override
+  List<String> countryNeighbours(String countryId) {
+    // TODO: implement countryNeighbours
+  }
+
+  /// Computes attacker loss comparing rolled [attacks] and [defends] dices.
+  @override
+  int computeAttackerLoss(List<int> attacks, List<int> defends) {
+    // TODO: implement computeAttackerLoss
+  }
+
+  /**
+   * Computes reinforcement for a [playerId] in this game.
+   * Reinforcement = (Number of countries player owns) / 3 + (Continent bonus)
+   * Continent bonus is added if player owns all the countries of a continent.
+   * If reinforcement is less than three, round up to three.
+   */
+  @override
+  int computeReinforcement(int playerId) {
+    // TODO: implement computeReinforcement
+  }
+
+  /// Updates this Risk game state for the incoming [event].
+  @override
+  void update(EngineEvent event) {
+    // TODO: implement update
+  }
+```
+
+&rarr; Implements those methods and run tests in `test/s3_game.dart` to check if your implementation is correct.
+
+Key information:
+* `@override` **TODO...**
+* `allCountryIds` returns all existing countries. Use `COUNTRIES` or `COUNTRY_BY_ID` to get them.
+* `countryNeighbours` computes the number of reinforcement armies at the beginning of a player turn. Follow the Risk rules (TODO link).
+* `computeAttackerLoss` takes rolled dices in parameter in descending order. It returns the number of lost armies for the attacker according to the Risk rules (TODO link).
+* `computeReinforcement` computes the number of reinforcement armies at the beginning of a player turn. Follow the Risk rules (TODO link) and use the [collection API](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-core.Iterable).
+  Advise: create a method `playerCountries` that returns the country ids owned by the player.
+* `update` updates the game state in function of the incoming event. Follow the Events bible (TODO link) and run the tests.
 
 ### Learn more
  - [Dart Language - Libraries](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html#libraries)
+ - [Collection API](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-core.Iterable)
 
 ### Problems?
-Check your code against the files in [s3_algorithm](../samples/s3_algorithm).
+Check your code against the files in [s3_game](../samples/s3_game).
 
 ## [Home](../README.md) | [< Previous](step-2.md) | [Next >](step-4.md)
