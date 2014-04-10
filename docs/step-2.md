@@ -217,6 +217,6 @@ Open `test/s1_map_test.dart`.
  - [Unit Testing with Dart](https://www.dartlang.org/articles/dart-unit-tests/)
 
 ### Problems?
-Check your code against the files in [s2_binding](../samples/s2_binding).
+Check your code against the files in [s2_classes](../samples/s2_classes).
 
 ## [Home](../README.md) | [< Previous](step-1.md) | [Next >](step-3.md)

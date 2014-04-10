@@ -1,18 +1,17 @@
 part of risk_engine;
 
+
 /**
  * Stores the Risk game state.
  */
 abstract class RiskGameState {
+  /// Game constants
   static const PLAYERS_MIN = 2;
   static const PLAYERS_MAX = 6;
   static const START_ARMIES = const [0, 0, 40, 35, 30, 25, 20];
   static const TURN_STEP_REINFORCEMENT = 'REINFORCEMENT';
   static const TURN_STEP_ATTACK = 'ATTACK';
   static const TURN_STEP_FORTIFICATION = 'FORTIFICATION';
-
-  /// Returns all possible countryIds
-  List<String> get allCountryIds;
 
   /// Returns the countryId / country state map.
   Map<String, CountryState> get countries;
@@ -30,14 +29,16 @@ abstract class RiskGameState {
   /// Return the turn step of the active player (REINFORCEMENT, ATTACK, FORTIFICATION).
   String get turnStep;
 
-  /**
-   * Updates this Risk game state for the incoming [event].
-   */
-  void update(EngineEvent event);
+  /// Returns the history of all events
+  List<EngineEvent> get events;
 
-  /**
-   * Computes attacker loss comparing rolled [attacks] and [defends] dices.
-   */
+  /// Returns all possible countryIds
+  List<String> get allCountryIds;
+
+  /// Returns neighbours ids for the given [countryId].
+  List<String> countryNeighbours(String countryId);
+
+  /// Computes attacker loss comparing rolled [attacks] and [defends] dices.
   int computeAttackerLoss(List<int> attacks, List<int> defends);
 
   /**
@@ -48,10 +49,8 @@ abstract class RiskGameState {
    */
   int computeReinforcement(int playerId);
 
-  /**
-   * Returns neighbours ids for the given [countryId].
-   */
-  List<String> countryNeighbours(String countryId);
+  /// Updates this Risk game state for the incoming [event].
+  void update(EngineEvent event);
 }
 
 /**
@@ -80,4 +79,6 @@ abstract class PlayerState {
   String get color;
   /// The number of available armies for the player.
   int get reinforcement;
+  /// True if the player lost the game.
+  bool get dead;
 }
