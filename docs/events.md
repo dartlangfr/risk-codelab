@@ -6,7 +6,7 @@
 * All `EngineEvent` are broadcasted to every players (except `WelcomeEvent`).
 * All `EngineEvent` are kept in an events history (except `WelcomeEvent`).
 * When player connects to the WebSocket:
-  * The server assign a `playerId` to sending him a `WelcomeEvent`.
+  * The server assign a `playerId` to the player sending him a `WelcomeEvent`.
   * Then, the server sends him all events in history so he is able to restore the game state.
 * All `PlayerEvent` contains the `playerId` of the player who sent the event.
 
