@@ -31,6 +31,7 @@ This code lab is tied to a specific version of Polymer.dart.)
 
 The initial app uses the following source files:
 * `pubspec.yaml`: The app's description and dependencies, used by the Dart package manager
+* `packages`: This folder contains the dependencies defined in `pubspec.yaml` and grabbed by `pub get`. `pub` also grabs the transitive dependencies (dependencies needed by dependencies).
 * `bin/main.dart`: The server app
 * `lib/`: Public libraries shared between server and client app (we'll skip this for now)
 * `test/`: The unit tests (we'll skip this for now)
@@ -95,10 +96,6 @@ Key information:
   on [pub.dartlang.org](http://pub.dartlang.org/).
 * For more information about the pub package manager, see the
   [pub documentation](https://www.dartlang.org/tools/pub/).
-
-#### packages
-
-The `packages` folder contains the dependencies grabbed by `pub get`. You can see packages that you not directly defined as dependency in `pubspec.yaml`. `pub` has also grab the transitive dependencies (dependencies needed by dependencies).
 
 #### web/index.html
 
@@ -174,7 +171,7 @@ You should see the _Risk_ navigation bar and a TO DO comment.
 
 &rarr; Right-click `bin/main.dart` and select **Run**.
 
-![Click the run button](img/s1-run-in-dartium.png).
+![Click the run button](img/s1-run.png).
 
 Dart Editor launches `bin/main.dart` script as a standalone app.
 Standard output is printed in a console window inside the IDE.  
