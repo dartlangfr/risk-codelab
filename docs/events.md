@@ -3,8 +3,8 @@
 * There is two kind of events:
   * `PlayerEvent` is an event sent by the player from the UI
   * `EngineEvent` is an event sent by the game Engine from the server
-* All `EngineEvent` are broadcasted to every players.
-* All `EngineEvent` are kept in an events history.
+* All `EngineEvent` are broadcasted to every players (except `WelcomeEvent`).
+* All `EngineEvent` are kept in an events history (except `WelcomeEvent`).
 * When player connects to the WebSocket:
   * The server assign a `playerId` to sending him a `WelcomeEvent`.
   * Then, the server sends him all events in history so he is able to restore the game state.
