@@ -39,6 +39,7 @@ abstract class RiskGameState {
   List<String> countryNeighbours(String countryId);
 
   /// Computes attacker loss comparing rolled [attacks] and [defends] dices.
+  /// This method assumes that [attacks] and [defends] are sorted in a descending order
   int computeAttackerLoss(List<int> attacks, List<int> defends);
 
   /**

@@ -109,7 +109,7 @@ Key information:
 
 ### Implementation of `RiskGameState`
 
-`RiskGameState` also provides few logical functions needed for the game engine and it is also capable of updating it self for an incoming `EngineEvent`.
+`RiskGameState` also provides few logical functions needed for the game engine and it is also capable of updating itself for an incoming `EngineEvent`.
 
 Continue to edit `src/game.dart`.
 
@@ -128,6 +128,7 @@ Continue to edit `src/game.dart`.
   }
 
   /// Computes attacker loss comparing rolled [attacks] and [defends] dices.
+  /// This method assumes that [attacks] and [defends] are sorted in a descending order
   @override
   int computeAttackerLoss(List<int> attacks, List<int> defends) {
     // TODO: implement computeAttackerLoss
@@ -154,6 +155,7 @@ Continue to edit `src/game.dart`.
 &rarr; Implements those methods and run tests in `test/s3_game.dart` to check if your implementation is correct.
 
 Key information:
+* `RiskGameStateImpl` implements an abstract class. Unlike _Java_ there's no real interface in _Dart_. [Every class implicitly defines an interface](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html#ch02-implicit-interfaces) containing all the instance members of the class and of any interfaces it implements. So every class can be used in `implements` clause.
 * `@override` is an annotation that marks an instance member as overriding a superclass member with the same name.
 * `allCountryIds` returns all existing countries. Use `COUNTRIES` or `COUNTRY_BY_ID` to get them.
 * `countryNeighbours` computes the number of reinforcement armies at the beginning of a player turn. Follow the [Risk rules](rules.md).
