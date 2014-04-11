@@ -152,7 +152,7 @@ Continue to edit `src/game.dart`.
   }
 ```
 
-&rarr; Implements those methods and run tests in `test/s3_game.dart` to check if your implementation is correct.
+&rarr; Implements those methods and run tests in `test/s3_game_test.dart` to check if your implementation is correct.
 
 Key information:
 * `RiskGameStateImpl` implements an abstract class. Unlike _Java_ there's no real interface in _Dart_. [Every class implicitly defines an interface](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html#ch02-implicit-interfaces) containing all the instance members of the class and of any interfaces it implements. So every class can be used in `implements` clause.
