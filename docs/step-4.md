@@ -27,6 +27,7 @@ Key information:
   having to write a main for your application.
 * The `packages/browser/dart.js` script checks for native Dart support and
   either bootstraps the Dart VM or loads compiled JavaScript instead.
+* When run in browser, the `index.html` file loads the app and calls the `main()` function in `package:polymer/init.dart` script.
 
 ### Add a basic custom element
 
