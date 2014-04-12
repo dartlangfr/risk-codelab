@@ -173,6 +173,7 @@ Create a new file `web/hello.html`.
 
 Key information:
 * HTML Imports are a way to include and reuse HTML documents in other HTML documents.
+* For HTML imports use the `import` relation on a standard `<link>` tag.
 
 ### Add custom behavior
 
