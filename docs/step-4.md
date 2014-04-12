@@ -1,6 +1,7 @@
-## Step 3: Polymer custom element
+## Step 4: Polymer custom element
 
-In this step, extend the lexicon of HTML with your own custom element.
+In this step, extend the lexicon of HTML with your own custom element. 
+You also specify element-defined style and expose an custom element attribute.
 
 _**Keywords**: polymer, custom element, template, custom attribute, binding_
 
@@ -31,23 +32,11 @@ Key information:
 
 Continue to edit `web/index.html`.
 
-&rarr; Declare a custom element named `hello-world`
-&rarr; Use it twice in the HTML code
-&rarr; Run in Dartium `web/index.html`
-
-You should see twice "Hello World!".
-
-**Got questions? Having trouble?** Ask the organizer team.
+&rarr; Declare a custom element named `hello-world`.
 
 ```HTML
 <html>
-  <head>
-    <!-- ... -->
-
-    <!-- Polymer bootstrap -->
-    <script type="application/dart">export 'package:polymer/init.dart';</script>
-    <script src="packages/browser/dart.js"></script>
-  </head>
+  <!-- ... -->
   <body>
     <!-- Declare a custom element named hello-world -->
     <polymer-element name="hello-world" noscript>
@@ -55,20 +44,31 @@ You should see twice "Hello World!".
         <h3>Hello World!</h3>
       </template>
     </polymer-element>
-
-    <!-- ... -->
-
-    <div>
-      TO DO: Put the UI widgets here.
-      <!-- Use the hello-world custom element -->
-      <hello-world></hello-world>
-      <hello-world></hello-world>
-    </div>
-  </body>
-</html>
 ```
 
+&rarr; Use it twice in the HTML code.
+
+```HTML
+<body>
+  <!-- ... -->
+
+  <div>
+    TO DO: Put the UI widgets here.
+    <!-- Use the hello-world custom element -->
+    <hello-world></hello-world>
+    <hello-world></hello-world>
+  </div>
+</body>
+```
+
+&rarr; Run in Dartium `web/index.html`.
+
+You should see twice _"Hello World!"_.
+
+**Got questions? Having trouble?** Ask the organizer team.
+
 Key information:
+* The `polymer-element` tag is the way to declare your custom element.
 * The `name`  attribute is required and **must** contain a `-`. 
   It specifies the name of the HTML tag you’ll instantiate in markup 
   (in this case `<hello-world>`).
@@ -101,7 +101,9 @@ To add element-defined styles, edit the element in `web/index.html`.
 </polymer-element>
 ```
 
-You should see centered and underlined "Hello World!".
+&rarr; Run in Dartium
+
+You should see centered and underlined _"Hello World!"_.
 
 &rarr; Try to affect the style of the element adding other styles outside of it.
 
@@ -123,7 +125,7 @@ Key information:
 * `:host` refers to the custom element itself and has the lowest specificity. This allows users to override your styling from the outside.
 * Polymer creates _Shadow DOM_ from the topmost <template> of your <polymer-element> definition, so styles defined internally to your element are scoped to your element. There’s no need to worry about duplicating an id from the outside or using a styling rule that’s too broad.
 
-### Import element
+### Externalize element
 
 Create a new file `web/hello.html`.
 
@@ -142,7 +144,7 @@ Create a new file `web/hello.html`.
 </polymer-element>
 ```
 
-&rarr; Import the element with an [HTML Import](http://www.polymer-project.org/platform/html-imports.html)
+&rarr; Import the element with an [HTML Import](http://www.polymer-project.org/platform/html-imports.html).
 
 ```HTML
 <html>
@@ -189,8 +191,8 @@ class HelloWorld extends PolymerElement {
 }
 ```
 
-&rarr; In `web/hello.html`, remove the `noscript` attribute.
-&rarr; Add the `script` tag specifying the URL to `hello.dart`.
+&rarr; In `web/hello.html`, remove the `noscript` attribute.  
+&rarr; Add the `script` tag specifying the URL to `hello.dart`.  
 &rarr; Add the binding to the field `name` of `HelloWorld` class:
 
 ```HTML
@@ -205,14 +207,16 @@ class HelloWorld extends PolymerElement {
 </polymer-element>
 ```
 
-You should see _Hello You!_
+&rarr; Run in Dartium
+
+You should see _"Hello You!"_.
 
 Key information:
 * The `script` tag specifies the path to the underlying dart script.
 * Any Polymer element class extends `PolymerElement`.
 * `CustomTag` specifies the name of the element.
-* The `super.created()` constructor must be called.
-* `{{name}}` is bound to the `name` field in `HelloWorld` class.
+* The `super.created()` constructor must be called in the custom element constructor.
+* `{{name}}` is a Polymer expression. It is bound to the `name` field in `HelloWorld` class.
 
 ### Add custom attribute
 
@@ -244,7 +248,9 @@ class HelloWorld extends PolymerElement {
 </html>
 ```
 
-You should see _Hello John!_ and _Hello Paul!_
+&rarr; Run in Dartium
+
+You should see _"Hello John!"_ and _"Hello Paul!"_.
 
 Key information:
 * `@published` means that is is an public attribute.
