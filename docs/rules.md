@@ -2,7 +2,7 @@
 
 ## Goal
 
-Unlike the original [Risk game](http://en.wikipedia.org/wiki/Risk_%28game%29) there's only one way to win : **you have to conquer the whole world.**
+Unlike the original [Risk game](http://en.wikipedia.org/wiki/Risk_%28game%29) there's only one way to win: **you have to conquer the whole world.**
 
 ## Start
 
@@ -14,7 +14,7 @@ Once started the game enters the setup phase.
 
 This phase allows to distribute the countries to the players and to place armies on countries.
 
-The number of armies to place by each player on their countries depends on the number of players :
+The number of armies to place by each player on their countries depends on the number of players:
 
 | Number of players  | Number of armies |
 | ---: | ---: |
@@ -32,14 +32,14 @@ Once all armies are placed the game can really start.
 
 ## Player turn
 
-The players plays one after the other. The turn of one player contains 3 phases : _Reinforcement_, _Attack_ and _Fortification_
+The players plays one after the other. The turn of one player contains 3 phases: _Reinforcement_, _Attack_ and _Fortification_
 
 ### Reinforcement
 
-In this phase you ge new armies to put on the map. The number of armies is computed from 2 factors :
+In this phase you get new armies to put on the map. The number of armies is computed from 2 factors:
 
 - the number of territories owned. For every three countries, you get one army. For example, if you had 11 countries, you would receive 3 armies; if you had 22 countries, you would receive 7 armies.
-- continent bonus: when all the territories of a continent are owned a bonus is earned
+- continent bonus: when you own all the territories of a continent you earn a bonus 
 
   | Continent  | Number of armies |
   | ------------- | ---: |
@@ -58,31 +58,28 @@ Once done you can attack.
 
 ### Attack
 
-This phase allows to attack other territories that are adjacent to a territory you own or that are connected with a territory you own by a sea-lane.
+This phase allows to attack other territories.
 
-You must attack :
-
-- from a territory with at least 2 armies
-- to a territory connected to the territory from which you attack
-
-If the attacked territory have no army left it is conquered. You can move any number of armies from the attacking territory to the conquered territory (there must be at least 1 army in every territory).
-
-You can attack any number of times during your turn. Once done you can make a **fortification**.
+You can:
+- only attack other territories that are adjacent to a territory you own or that are connected to you a territory you own by a sea-lane.
+- attack any number of times from any one of your territories to any adjacent territory.
 
 Attacking is optional. You may decide not to attack at all during a turn, only deploying armies.
 
-#### attack computation
+Once done you can make a **fortification**.
 
-Because a territory must be occupied at all times, the attacker must leave at least one army behind. The rest of armies (with a maximum of 3) are used to attack. This number determines how many dices to roll for the attacker.
-The defender will roll one dice by army on the attacked territory (with a maximum of 2).
+#### Battle
 
-Then:
+A maximum of 3 armies are squared off to attack but at least one army must stay behind, because a territory must be occupied at all times. This number determines how many dices to roll for the attacker.  
+A maximum of 2 armies are squared off from the attacked territory. This number determines how many dices to roll for the defender.
 
--Match up the highest attacking dice with the highest defending dice, and match the second highest attacking dice with the second highest defending dice. If there is only one defending dice, only match up the highest attacking dice with the defending dice.
--Remove one army from the attacking territory if the defending dice is higher or equal to its corresponding attacking dice.
--Remove one army from the defending territory if the attacking dice is higher to its corresponding defending dice.
+Dices are rolled, then:
 
-It's hard to understand ? Here are examples :
+- Match up the highest attacking dice with the highest defending dice, and match the second highest attacking dice with the second highest defending dice. If there is only one defending dice, only match up the highest attacking dice with the defending dice.
+- Remove one army from the attacking territory if the defending dice is higher or equal to its corresponding attacking dice.
+- Remove one army from the defending territory if the attacking dice is higher to its corresponding defending dice.
+
+It's hard to understand? Here are examples:
 
 | Attacking dices | Defending dices | Attacking loss | Defending loss |
 | ----- | --- | --- | --- |
@@ -94,6 +91,7 @@ It's hard to understand ? Here are examples :
 | 2     | 1,1 | 0 | 1 |
 | 2     | 3,1 | 1 | 0 |
   
+If the attacked territory have no army left it is conquered. You must move at least one army from the attacking territory to the conquered territory (there must be at least 1 army in every territory).
 
 ### Fortification
 
