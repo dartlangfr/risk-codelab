@@ -22,7 +22,9 @@ part 'src/game.dart';
 The editor complains about inexistant `src/game.dart` file. We'll create it in the section below.  
 It also complains about unused imports. Don't worry about that, we'll be using `dart:math` and the engine later in this step.
 
-Create a new file `src/game.dart`, as follows.
+&rarr; Under `lib/src`, create a file named `game.dart`.
+
+To do this in Dart Editor, right-click the `lib/src` directory, choose **New File...**, and specify the name `game.dart`.
 
 ```Dart
 part of risk;
