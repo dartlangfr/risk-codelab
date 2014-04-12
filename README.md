@@ -21,8 +21,9 @@ This code lab has the following sections:
 * [Step 4: First Polymer custom element](docs/step-4.md)
 * [Step 5: Players list](docs/step-5.md)
 * [Step 6: Map](docs/step-6.md)
-* [Step 7: Events serialization](docs/step-67.md)
-* [Step 8: Server](docs/step-8.md)
+* [Step 7: Player enrollment](docs/step-7.md)
+* [Step 8: Events serialization](docs/step-8.md)
+* [Step 9: Server](docs/step-9.md)
 
 
 ### Useful links
