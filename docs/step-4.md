@@ -76,7 +76,7 @@ Key information:
 * The `noscript` attribute indicates that this is a simple element 
   that doesn’t include any script. An element declared with noscript 
   is registered automatically.
-* The `template` tag contains the content of the web component. For now,
+* The `template` tag contains the content of the element. For now,
   it's static content.
 
 ### Add element-defined styles

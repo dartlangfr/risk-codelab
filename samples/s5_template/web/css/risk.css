@@ -2,8 +2,28 @@
   vertical-align: middle;
 }
 
-#avatars img {
+.list-group-inverse {
+  background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+  background-image:         linear-gradient(to bottom, #3c3c3c 0%, #222 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #080808;
+  color: #ccc;
+}
+
+.list-group-inverse .list-group-item {
+  background-color: transparent;
+}
+
+.list-group-inverse .list-group-item.active {
+  color: #fff;
+}
+
+#players img {
   width: 48px;
+  border-width: 0 0 0 5px;
+  border-style: solid;
 }
 
 #history img {
