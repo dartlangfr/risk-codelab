@@ -20,6 +20,23 @@
   color: #fff;
 }
 
+svg > * {
+  cursor:default;
+
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
+
+@keyframes highlight {
+  from { opacity: 1; }
+  to { opacity: 0.8; }
+}
+
 #players img {
   width: 48px;
   border-width: 0 0 0 5px;

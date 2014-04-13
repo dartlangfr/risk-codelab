@@ -36,7 +36,7 @@ The initial app uses the following source files:
 * `lib/`: Public libraries shared between server and client app (we'll skip this for now)
 * `test/`: The unit tests (we'll skip this for now)
 * `web/index.html`: The web app's template
-* `web/css`, `web/fonts` and `web/img`: The app's appearance (we'll skip this for now)
+* `web/css`, `web/fonts`, `web/img` and `web/res`: The app's appearance (we'll skip this for now)
 
 &rarr;  In Dart Editor, open `pubspec.yaml` (in the top directory) by
 double-clicking its filename.

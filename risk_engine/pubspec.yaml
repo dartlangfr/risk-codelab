@@ -1,6 +1,7 @@
 name: risk_engine
 description: Provide logic for the two hour exercise Risk code lab.
 dependencies:
+  polymer: 0.9.5
   morph: any
   http_server: any
 dev_dependencies:

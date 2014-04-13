@@ -1,11 +1,16 @@
 library risk_engine.snapshot;
 
-import 'client.dart';
+import 'risk_engine.dart';
+
+RiskGameState loadEvents(RiskGameState game, Iterable<EngineEvent> events) {
+  events.forEach(game.update);
+  return game;
+}
 
 final List<EngineEvent> SNAPSHOT_GAME_STARTED = [
 new Welcome()..playerId = 2,
-new PlayerJoined()..playerId = 1..name = "Paul McCartney"..avatar = "castro",
-new PlayerJoined()..playerId = 2..name = "John Lennon"..avatar = "kadhafi",
+new PlayerJoined()..playerId = 1..name = "Paul McCartney"..avatar = "castro.png"..color = "green",
+new PlayerJoined()..playerId = 2..name = "John Lennon"..avatar = "kadhafi.png"..color = "blue",
 new GameStarted()..armies = 40..playersOrder = [2, 1],
 new ArmyPlaced()..playerId = 1..country = "japan",
 new ArmyPlaced()..playerId = 1..country = "ontario",
