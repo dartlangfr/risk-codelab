@@ -17,23 +17,14 @@ export 'risk_engine.dart';
 
 /// Brings some logical facilitation for RiskBoard
 abstract class AbstractRiskBoardElement extends PolymerElement {
+  /// The selected country
+  String get selectedCountryId;
+  set selectedCountryId(String value);
   /// The Risk game state
   RiskGameState get game;
   /// The connected playerId
-  int get playerId;
-  /// The selected country
-  String get selectedCountryId;
-
-  /// When a country is selected
-  countrySelect(Event e, var detail, Element target);
-  /// When a country is unselected
-  countryUnselect(Event e, var detail, Element target);
-  /// When country is clicked to place an army
-  countryPlaceArmy(Event e, var detail, Element target);
-  /// When country to attack is clicked with a previously selected country
-  countryAttack(Event e, var detail, Element target);
-  /// When country where to move armies is clicked with a previously selected country
-  countryMove(Event e, var detail, Element target);
+  @published
+  int playerId;
 
   AbstractRiskBoardElement.created(): super.created();
 
@@ -62,6 +53,23 @@ abstract class AbstractRiskBoardElement extends PolymerElement {
     }
     return countryUnselect;
   }
+
+  /// When a country is selected
+  countrySelect(Event e, var detail, Element target) => selectedCountryId = target.dataset['country'];
+  /// When a country is unselected
+  countryUnselect(Event e, var detail, Element target) => selectedCountryId = null;
+  /// When country is clicked to place an army
+  countryPlaceArmy(Event e, var detail, Element target) => fire('selection', detail: target.dataset['country']);
+  /// When country to attack is clicked with a previously selected country
+  countryAttack(Event e, var detail, Element target) => fire('attack', detail: {
+    'from': selectedCountryId,
+    'to': target.dataset['country']
+  });
+  /// When country where to move armies is clicked with a previously selected country
+  countryMove(Event e, var detail, Element target) => fire('move', detail: {
+    'from': selectedCountryId,
+    'to': target.dataset['country']
+  });
 
   bool isMine(String country) => game.countries[country].playerId == playerId;
   bool isNotMine(String country) => !isMine(country);
