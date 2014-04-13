@@ -14,7 +14,9 @@ pubspec.lock
 #Dart Editor
 .project
 .buildlog
+.settings
 
 #Intellij Editor
 .idea/
 *.iml
+

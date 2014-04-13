@@ -1,9 +1,9 @@
 ## Step 4: Polymer custom element
 
-In this step, extend the lexicon of HTML with your own custom element. 
+In this step, you create a custom element that lets you use a `<hello-world>` tag anywhere in your app. 
 You also specify element-defined style and expose an custom element attribute.
 
-_**Keywords**: polymer, custom element, template, custom attribute, binding_
+_**Keywords**: custom element, Shadow DOM, custom attribute, binding_
 
 
 ### Bootstrap Polymer
@@ -262,6 +262,7 @@ Key information:
  - [Polymer.dart](https://www.dartlang.org/polymer-dart/)
  - [Polymer project](http://www.polymer-project.org/)
  - [A Guide to Styling Elements](http://www.polymer-project.org/articles/styling-elements.html)
+ - [Shadow DOM](http://www.w3.org/TR/shadow-dom/)
 
 ### Problems?
 Check your code against the files in [s4_element](../samples/s4_element).

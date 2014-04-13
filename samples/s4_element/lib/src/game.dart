@@ -16,11 +16,11 @@ class PlayerStateImpl implements PlayerState {
   /// The playerId for this CountryState.
   final int playerId;
   /// The player's name.
-  final String name;
+  String name;
   /// The player's avatar.
-  final String avatar;
+  String avatar;
   /// The player's color.
-  final String color;
+  String color;
   /// The number of available armies for the player.
   int reinforcement;
   /// True if the player lost the game.
