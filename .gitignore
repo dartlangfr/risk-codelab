@@ -14,4 +14,4 @@ pubspec.lock
 #Dart Editor
 .project
 .buildlog
-
+.settings
