@@ -19,5 +19,5 @@ class RiskPlayers extends PolymerElement {
 
   RiskPlayers.created(): super.created();
 
-  String uppercase(String s) => s.toUpperCase();
+  String capitalize(String s) => s.toUpperCase();
 }

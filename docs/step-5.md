@@ -1,8 +1,8 @@
 ## Step 5: Polymer templates
 
-In this step, ...
+In this step, you use more binding expressions, filter function and templates.
 
-_**Keywords**: ..._
+_**Keywords**: binding, filter function, conditional template, template loop_
 
 ### Create a `risk-players` element
 
@@ -73,41 +73,43 @@ Key information:
 
 ### Filter function
 
-We want to uppercase the player name, to do so, follow this instructions:
+Filters let you change how your model data is displayed in the view without changing the model data itself. 
+For example, they're useful for showing parts of a model's data, or displaying data in a particular format.
+You can also easily create and use your own filters, as the following instructions show how to capitalize player name.
 
-&rarr; Add a `uppercase` filter function in `web/players.dart`:
+&rarr; Add a `capitalize` filter function in `web/players.dart`:
 
 ```Dart
 class RiskPlayers extends PolymerElement {
   // ...
-  String uppercase(String s) => s.toUpperCase();
+  String capitalize(String s) => s.toUpperCase();
   // ...
 }
 ```
 
-&rarr; Use it to upper-case the player `name` in `web/players.html`:
+&rarr; Use it to capitalize the player `name` in `web/players.html`:
 
 ```HTML
-<span><b>{{player.name | uppercase}}</b></span>
+<span><b>{{player.name | capitalize}}</b></span>
 ```
 
 &rarr; Run in Dartium
 
-You should see the upper-case player name:
+You should see the capitalized player name:
 
-![Single player](img/s5-player-uppercase.png).
+![Single capitalized player](img/s5-player-uppercase.png).
 
 Key information:
 * A filter is a function that transforms a value into another, used via the pipe syntax: `value | filter`. Any function that takes exactly one argument can be used as a filter.
-* The top-level function named `uppercase` is in the scope so if `player.name` is "John Lennon", then `person.name | uppercase` will have the value "JOHN LENNON".
+* The top-level function named `capitalize` is in the scope so if `player.name` is "John Lennon", then `person.name | capitalize` will have the value "JOHN LENNON".
 
 ### Conditional template
 
 We want to display soldier icons in function of the number of player reinforcement:
 
-- ![!](img/soldier.png) if `reinforcement` is less or equal to `1`
-- ![!](img/soldier.png)![!](img/soldier.png)![!] if `reinforcement` is equal `2`
-- ![!](img/soldier.png)![!](img/soldier.png)![!](img/soldier.png) if `reinforcement` is greater or equal to `3`
+- ![!](img/soldier.png): if `reinforcement` is less or equal than `1`
+- ![!](img/soldier.png)![!](img/soldier.png): if `reinforcement` is equal to `2`
+- ![!](img/soldier.png)![!](img/soldier.png)![!](img/soldier.png): if `reinforcement` is greater or equal than `3`
 
 &rarr; In `web/players.html`, use conditional templates:
 
@@ -115,22 +117,73 @@ We want to display soldier icons in function of the number of player reinforceme
 <span class="badge pull-right">
   <i class="riskicon riskicon-soldier"></i>
   <!-- TODO complete the if expression -->
-  <template if="{{ true }}">
+  <template if="{{ ... }}">
     <i class="riskicon riskicon-soldier"></i>
   </template>
   <!-- TODO complete the if expression -->
-  <template if="{{ false }}">
+  <template if="{{ ... }}">
     <i class="riskicon riskicon-soldier"></i>
   </template>
   {{ player.reinforcement }}
 </span>
 ```
 
+&rarr; Complete the `if` conditions with the right expressions.  
 &rarr; Run in Dartium, and try to change the value of player `reinforcement`.
 
 Key information:
-* Control the UI with declarative conditionals in templates.
+* Control the UI with declarative conditional `if` templates.
 * Template conditionals are part of the data binding infrastructure. If `player.reinforcement` changes, the templates are automatically re-evaluated.
+
+### Template loop
+
+We want to display a list of players.
+
+&rarr; In `web/players.dart`, remove the `player` field and add two new published fields, `players` and `activePlayerId`:
+
+```Dart
+class RiskPlayers extends PolymerElement {
+  // We don't need player field anymore
+  // PlayerState player = new PlayerStateImpl(2, "John Lennon", "kadhafi.png", "blue", reinforcement: 2);
+
+  @published
+  Iterable<PlayerState> players = [
+    new PlayerStateImpl(1, "Paul McCartney", "castro.png", "green", reinforcement: 0),
+    new PlayerStateImpl(2, "John Lennon", "kadhafi.png", "blue", reinforcement: 2),
+    new PlayerStateImpl(3, "Ringo Starr", "staline.png", "yellow", reinforcement: 1),
+    new PlayerStateImpl(4, "George Harrison", "kim-jong-il.png", "red", reinforcement: 4),
+  ];
+
+  @published
+  int activePlayerId = 2;
+  // ...
+}
+```
+
+&rarr; In `web/players.html`, use conditional loop to iterate over `players`:
+
+```HTML
+<ul id="players" class="list-group list-group-inverse img-rounded">
+  <template repeat="{{ player in players }}">
+    <!-- Complete the following tokenList filter to enable `active` class if it is the active player -->
+    <li class="list-group-item {{ {'active': ...} }}">
+      <!-- ... -->
+    </li>
+  </template>
+</ul>
+```
+
+&rarr; Complete the `tokenList` filter to enable `active` class if it is the active player in function of `activePlayerId` value.  
+&rarr; Run in Dartium.
+
+You should see something like:
+
+![Players list](img/s5-players.png).
+
+Key information:
+* `{{ player in players }}` loops through a collection, instantiating a template for every item in the collection.
+* Template loops are part of the data binding infrastructure. If an item is added or removed from `players`, the contents of `<ul>` are automatically updated.
+* The `tokenList` filter is useful for binding to the class attribute. It allows you to dynamically set/remove class names based on the object passed to it. If the object key is truthy, the name will be applied as a class.
 
 ### Learn more
  - [Polymer.dart](https://www.dartlang.org/polymer-dart/)
