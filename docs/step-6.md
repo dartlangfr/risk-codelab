@@ -1,8 +1,8 @@
 ## Step 6: Risk board
 
-In this step, ...
+In this step, you build a board map updated by the game state model.
 
-_**Keywords**: ..._
+_**Keywords**: SVG, HttpRequest, Future, event handler_
 
 ### Create a `risk-players` element
 
@@ -45,6 +45,8 @@ Create a new custom element, as follows.
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 800 540" width="100%" height="90%">
       
+      <!-- TODO: iterate here to display country contours -->
+      
     </svg>
   </template>
   <script type="application/dart" src="board.dart"></script>
@@ -75,18 +77,18 @@ class RiskBoard extends PolymerElement {
 ```
 
 Key information:
-* Styles are already defined. `country`, `selected`, `selectable` define specific appearance on the country contours when the mouse is over, or when the country is selected or selectable.
-* In the `RiskBoard.created()`, data are read from a json file. This file contains country contour paths and optimal center.
+* Styles are already defined: `country`, `selected`, `selectable` define specific appearance on the country contours when the mouse is over, or when the country is selected or selectable.
+* In the `RiskBoard.created()` constructor, country data are read from a json file. This file contains country contour paths and optimal center.
   * `HttpRequest` is a utility for retrieving data from a URL.
   * `getString()` is a convenience method for doing a simple GET request that returns a string.
   * The code uses a `Future` to perform the GET asynchronously.
   * The callback function for `.then()` is called when the Future completes successfully.
-  * When the `Future` completes successfully, the JSON content is read then set to the `paths` field.
-* `@observable` specifies that `paths` is an observable property for use in Model-Driven-Views (MDV). MDV extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of a document or application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model.
+  * When the `Future` completes successfully, the json content is read then set to the `paths` field.
+* `@observable` specifies that `paths` is an observable property for use in Model-Driven-Views (MDV). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model.
 
 ### Draw country contours
 
-&rarr; Have a look to the loaded JSON file `web/res/country-paths.json`:
+&rarr; Have a look to the loaded json file `web/res/country-paths.json`:
 
 ```Json
 {
@@ -117,7 +119,7 @@ The first level key, e.g. `eastern_australia`, is the `countryId`. Its value con
 &rarr; Import this new component in `web/index.html` and use its tag.  
 &rarr; Run in Dartium
 
-You should see something like and mouse over on a country should increase its stroke width:
+You should see something like the following screenshot and mouse over on a country should increase its stroke width:
 
 ![Countries](img/s6-countries-empty.png).
 
@@ -165,9 +167,9 @@ Key information:
   - An `Event` that contains information about the event, such as its type and when it occurred.
   - The `detail` object can provide additional, event-specific information.
   - The `Element` that fired the event.
-* `data-country` is custom data attribute. [Element.dataset](https://api.dartlang.org/docs/channels/stable/latest/dart_html/Element.html#dataset) allows access to all custom data attributes (data-*) set on this element.
+* `data-country` is an custom data attribute. [Element.dataset](https://api.dartlang.org/docs/channels/stable/latest/dart_html/Element.html#dataset) allows access to all custom data attributes (data-*) set on this element.
 
-### Display player colors and country armies in place
+### Display player colors and armies in place
 
 &rarr; In `web/board.dart`, add a new published `game` field.  
 &rarr; Implement a function `color` that returns the player color:
@@ -207,13 +209,63 @@ You should see something like:
 ![Countries](img/s6-countries-color.png).
 
 Key information:
-* `loadEvents(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK)` loads a game state from an event history `SNAPSHOT_GAME_ATTACK`.
+* `loadEvents(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK)` loads a game state from the event history `SNAPSHOT_GAME_ATTACK`.
+
+### Selectable and complex logic
+
+To make this exercise easier, we provide to you the complex logic in a class to extend. It brings selectable and click logic.
+
+Edit `web/board.dart` and `web/board.html`, as follows:
+
+&rarr; In `web/board.dart`, extend the element with the given `AbstractRiskBoardElement` class:
+
+```Dart
+class RiskBoard extends AbstractRiskBoardElement {
+  // ...
+}
+```
+
+&rarr; In `web/board.html`, copy and paste the following code:
+
+```HTML
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 800 540" width="100%" height="90%">
+  <!-- Background image -->
+  <image xlink:href="img/board.svg" width="100%" height="100%" />
+
+  <template repeat="{{ countryId in paths.keys }}">
+    <g on-click="{{ countryClick }}" data-country="{{ countryId }}"
+      class="{{ {'selected': countryId == selectedCountryId, 'selectable': selectableCountry(countryId, game.activePlayerId, game.turnStep, selectedCountryId)} }}">
+      <path class="country" d="{{ paths[countryId]['path'] }}"
+        fill="{{ color(game.countries[countryId].playerId) }}">
+      </path>
+      <!-- Armies number -->
+      <template if="{{ game.countries[countryId].armies > 0 }}">
+        <g transform="translate({{ paths[countryId]['center']['x'] }},{{ paths[countryId]['center']['y'] }})">
+          <circle cx="0" cy="0" r="8" stroke="black" stroke-width="1" fill="white" />
+          <text text-anchor="middle" font-size="10" x="0" y="3">{{ game.countries[countryId].armies }}</text>
+        </g>
+      </template>
+    </g>
+  </template>
+</svg>
+```
+&rarr; Run in Dartium
+
+You should see something like with highlighted selectable countries:
+
+![Countries](img/s6-countries-highlight.png).
+
+Key information:
+* `<image xlink:href="img/board.svg" ... />` is a background image that adds sea-lane and colored continent shadow.
+* `countryClick` now handles country click. It has more logic depending on the game state and selected country.
+* `selectable` highlights selectable countries depending on the game state and selected country.
 
 ### Learn more
  - [Polymer.dart](https://www.dartlang.org/polymer-dart/)
  - [Polymer expressions](https://pub.dartlang.org/packages/polymer_expressions)
  
 ### Problems?
-Check your code against the files in [s5_template](../samples/s5_template).
+Check your code against the files in [s6_board](../samples/s6_board).
 
 ## [Home](../README.md) | [< Previous](step-5.md) | [Next >](step-7.md)

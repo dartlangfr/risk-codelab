@@ -24,7 +24,7 @@ abstract class AbstractRiskBoardElement extends PolymerElement {
   RiskGameState get game;
   /// The connected playerId
   @published
-  int playerId;
+  int playerId = 2;
 
   AbstractRiskBoardElement.created(): super.created();
 
@@ -34,6 +34,11 @@ abstract class AbstractRiskBoardElement extends PolymerElement {
   selectableCountry(String countryId, int activePlayerId, String turnStep, String selectedCountryId) {
     var handler = getClickHandler(countryId, activePlayerId, turnStep, selectedCountryId);
     return handler != countryUnselect && (selectedCountryId == null || handler != countrySelect);
+  }
+
+  countryClick(Event e, var detail, Element target) {
+    var handler = getClickHandler(target.dataset['country'], game.activePlayerId, game.turnStep, selectedCountryId);
+    handler(e, detail, target);
   }
 
   /**
