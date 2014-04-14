@@ -266,6 +266,13 @@ class RiskGameStateImpl extends Object with Observable implements RiskGameState 
 
   List<EngineEvent> events = toObservable([]);
 
+  void update(EngineEvent event) {
+      // ...
+
+      // Because of a bug in ObservableMap, workaround for now before the fix https://codereview.chromium.org/213743012/
+      notifyPropertyChange(#countries, {}, countries);
+      notifyPropertyChange(#players, {}, players);
+  }
   // ...
 }
 ```
@@ -280,6 +287,7 @@ Key information:
   It means that the instance of `RiskGameStateImpl` is updated on a continuous-flow of events.
 * `Observable` represents an object with observable properties. This is used by data in model-view architectures to notify interested parties of changes to the object's properties (fields or getter/setter pairs). The `with` clause is the way to do [Mixins](https://www.dartlang.org/articles/mixins/) in Dart.
 * `toObservable()` converts the `List` or `Map` to an `ObservableList` or `ObservableMap`, respectively. This is a convenience function to make it easier to convert literals into the corresponding observable collection type.
+* `notifyPropertyChange` notifies that a field of the object has been changed.
 * All fields that are suppposed to change during the game (particularly in `RiskGameStateImpl.update` function) are marked with the `@observable`annotation. So updates to the model are reflected in the DOM.
 
 ### Selectable and complex logic
