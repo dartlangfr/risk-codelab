@@ -1,0 +1,16 @@
+name: risk
+description: A two hour exercise, based on the Risk game, to learn Polymer.dart.
+dependencies:
+  polymer: 0.9.5
+  browser: any
+  bootstrap_for_pub: ">=3.1.0 <3.2.0"
+  morph: any
+  http_server: any
+  risk_engine:
+    path: ../../risk_engine
+dev_dependencies:
+  unittest: any
+  mock: any
+transformers:
+- polymer:
+    entry_points: web/index.html

@@ -190,6 +190,6 @@ Key information:
  - [Polymer expressions](https://pub.dartlang.org/packages/polymer_expressions)
  
 ### Problems?
-Check your code against the files in [s5_template](../samples/s5_template).
+Check your code against the files in [s10_alltogether](../samples/s10_alltogether).
 
-## [Home](../README.md) | [< Previous](step-4.md) | [Next >](step-6.md)
+## [Home](../README.md) | [< Previous](step-9.md) | [End >](end.md)

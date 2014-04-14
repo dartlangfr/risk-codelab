@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<link rel="import" href="board.html">
+<link rel="import" href="hello.html">
+<link rel="import" href="players.html">
+<link rel="import" href="modal.html">
+<link rel="import" href="registration.html">
+<link rel="import" href="packages/risk_engine/components/history.html">
+<link rel="import" href="packages/risk_engine/components/panel.html">
+
+<polymer-element name="risk-game">
+  <template>
+    <link rel="stylesheet" href="css/risk.css">
+    <link rel="stylesheet" href="packages/bootstrap_for_pub/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="packages/bootstrap_for_pub/3.1.0/css/bootstrap-theme.min.css">
+
+    <section class="container-fluid">
+      <div class="row">
+        <!-- Risk Board -->
+        <risk-board id='board' game="{{ game }}" playerId="{{ playerId }}" class="col-md-9"
+          on-attack="{{ attack }}"
+          on-move="{{ move }}"
+          on-selection="{{ selection }}"></risk-board>
+
+        <div class="col-md-3">
+          <hello-world name="{{ game.players[playerId].name }}"></hello-world>
+
+          <risk-players players="{{ game.players.values }}" activePlayerId="{{ game.activePlayerId }}" playersOrder="{{ game.playersOrder }}"></risk-players>
+
+          <risk-panel game="{{ game }}" playerId="{{ playerId }}" pendingMove="{{ pendingMove }}"
+            on-startgame="{{ startGame }}"
+            on-movearmies="{{ moveArmies }}"
+            on-endattack="{{ endAttack }}"
+            on-endturn="{{ endTurn }}"></risk-panel>
+
+          <risk-history game="{{ game }}"></risk-history>
+        </div>
+      </div>
+    </section>
+
+    <template if="{{ !game.started && game.players[playerId] == null }}">
+      <risk-modal title="Player registration">
+        <risk-registration on-done='{{ joinGame }}'></risk-registration>
+      </risk-modal>
+    </template>
+  </template>
+  
+  <script type="application/dart" src="game.dart"></script>
+</polymer-element>
+
