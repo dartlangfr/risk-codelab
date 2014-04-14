@@ -173,7 +173,7 @@ class RiskPlayers extends PolymerElement {
 </ul>
 ```
 
-&rarr; Complete the `tokenList` filter to enable `active` class if it is the active player in function of `activePlayerId` value.  
+&rarr; Complete the [`tokenList` filter](http://www.polymer-project.org/docs/polymer/filters.html#tokenlist) to enable `active` class if it is the active player in function of `activePlayerId` value.  
 &rarr; Run in Dartium.
 
 You should see something like:
