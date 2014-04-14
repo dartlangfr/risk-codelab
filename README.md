@@ -24,6 +24,7 @@ This code lab has the following sections:
 * [Step 7: Player enrollment](docs/step-7.md)
 * [Step 8: Events serialization](docs/step-8.md)
 * [Step 9: Server](docs/step-9.md)
+* [Step 10: Put it all together](docs/step-10.md)
 
 
 ### Useful links
