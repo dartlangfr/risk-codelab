@@ -348,4 +348,35 @@ testUpdate() {
 
     expectEquals(game, expected);
   });
+
+  test('on PlayerLost should set player to dead', () {
+    // GIVEN
+    var event = new PlayerLost()
+        ..playerId = 1;
+
+    // WHEN
+    game.update(event);
+
+    // THEN
+    var expected = riskGameReinforcement();
+    expected.events.add(event);
+    expected.players[1].dead = true;
+
+    expectEquals(game, expected);
+  });
+
+  test('on PlayerWin should do nothing', () {
+    // GIVEN
+    var event = new PlayerWon()
+        ..playerId = 1;
+
+    // WHEN
+    game.update(event);
+
+    // THEN
+    var expected = riskGameReinforcement();
+    expected.events.add(event);
+
+    expectEquals(game, expected);
+  });
 }

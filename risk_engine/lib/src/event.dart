@@ -149,3 +149,15 @@ class ArmyMoved implements EngineEvent {
   /// The number of armies the player moved
   int armies;
 }
+
+/// sent by engine when a player lost the game
+class PlayerLost implements EngineEvent {
+  /// The player id who lost the game
+  int playerId;
+}
+
+/// sent by engine when a player win the game
+class PlayerWon implements EngineEvent {
+  /// The player id who won the game
+  int playerId;
+}
