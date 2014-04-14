@@ -178,7 +178,7 @@ Key information:
 class RiskBoard extends PolymerElement {
   // ...
   @published
-  RiskGameState game = loadEvents(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK);
+  RiskGameState game = loadEventsSync(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK);
 
   // TODO: return the player color, white if the playerId is null
   String color(int playerId) => "white";
@@ -195,7 +195,7 @@ class RiskBoard extends PolymerElement {
   <path class="country" d="{{ paths[countryId]['path'] }}" 
     fill="{{ color(game.countries[countryId].playerId) }}"></path>
   <!-- Armies number -->
-  <g transform="translate({{ paths[countryId]['center']['x'] }},{{ paths[countryId]['center']['y'] }})">
+  <g transform="translate({{ paths[countryId]['center']['x'] }}, {{ paths[countryId]['center']['y'] }})">
     <circle cx="0" cy="0" r="8" stroke="black" stroke-width="1" fill="white" />
     <!-- TODO: complete binding to get country armies number -->
     <text text-anchor="middle" font-size="10" x="0" y="3">{{ ... }}</text>
@@ -209,7 +209,78 @@ You should see something like:
 ![Countries](img/s6-countries-color.png).
 
 Key information:
-* `loadEvents(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK)` loads a game state from the event history `SNAPSHOT_GAME_ATTACK`.
+* `loadEventsSync(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK)` loads a game state from the events history `SNAPSHOT_GAME_ATTACK` synchronously. 
+  It means that the instance of `RiskGameStateImpl` is completely updated with the events history when the `game` field is instantiated.
+
+### Events stream
+
+During the game, the instance `RiskGameState` will be continuously updated by an event stream coming from server game engine.
+
+&rarr; To simulate an incoming event stream, change the `loadEventsSync` call by the call of `loadEventsAsync`:
+
+```Dart
+RiskGameState game = loadEventsAsync(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK);
+```
+
+&rarr; Run in Dartium
+
+The map countries should stay blank. In deed, `@published` or `@observable` annotations do not observe deeply in the instance, only the changes of the variable.
+To be able to observe the fields changes in the object, we have to update the models as follows:
+
+&rarr; Edit `lib/risk.dart` and add a new import:
+
+```Dart
+import 'package:observe/observe.dart';
+```
+
+&rarr; Edit `lib/src/game.dart` and make `CountryStateImpl`, `PlayerStateImpl` and `RiskGameStateImpl` observable:
+
+```Dart
+class CountryStateImpl extends Object with Observable implements CountryState {
+  final String countryId;
+  @observable int playerId;
+  @observable int armies;
+  // ...
+}
+
+class PlayerStateImpl extends Object with Observable implements PlayerState {
+  final int playerId;
+  String name;
+  String avatar;
+  String color;
+  @observable int reinforcement;
+  @observable bool dead;
+
+  // ...
+}
+
+class RiskGameStateImpl extends Object with Observable implements RiskGameState {
+  Map<String, CountryStateImpl> countries = toObservable({});
+  Map<int, PlayerStateImpl> players = toObservable({});
+  @observable List<int> playersOrder = [];
+  @observable int activePlayerId;
+
+  @observable bool started = false;
+  @observable bool setupPhase = false;
+  @observable String turnStep;
+
+  List<EngineEvent> events = toObservable([]);
+
+  // ...
+}
+```
+&rarr; Run in Dartium
+
+You should see progressively the board updated:
+
+![Countries](img/s6-countries-building.png).
+
+Key information:
+* `loadEventsSync(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK)` loads a game state from the events history `SNAPSHOT_GAME_ATTACK` asynchronously. It sends a new event to the game state every 50ms.
+  It means that the instance of `RiskGameStateImpl` is updated on a continuous-flow of events.
+* `Observable` represents an object with observable properties. This is used by data in model-view architectures to notify interested parties of changes to the object's properties (fields or getter/setter pairs). The `with` clause is the way to do [Mixins](https://www.dartlang.org/articles/mixins/) in Dart.
+* `toObservable()` converts the `List` or `Map` to an `ObservableList` or `ObservableMap`, respectively. This is a convenience function to make it easier to convert literals into the corresponding observable collection type.
+* All fields that are suppposed to change during the game (particularly in `RiskGameStateImpl.update` function) are marked with the `@observable`annotation. So updates to the model are reflected in the DOM.
 
 ### Selectable and complex logic
 

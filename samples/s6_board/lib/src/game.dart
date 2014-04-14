@@ -1,54 +1,54 @@
 part of risk;
 
 /// Stores the state of a country.
-class CountryStateImpl implements CountryState {
+class CountryStateImpl extends Object with Observable implements CountryState {
   /// The countryId for this CountryState.
   final String countryId;
   /// The playerId who owns this country.
-  int playerId;
+  @observable int playerId;
   /// The number of armies in this country.
-  int armies;
+  @observable int armies;
   CountryStateImpl(this.countryId, {this.playerId, this.armies: 0});
 }
 
 /// Stores the state of a player.
-class PlayerStateImpl implements PlayerState {
+class PlayerStateImpl extends Object with Observable implements PlayerState {
   /// The playerId for this CountryState.
   final int playerId;
   /// The player's name.
-  String name;
+  @observable String name;
   /// The player's avatar.
-  String avatar;
+  @observable String avatar;
   /// The player's color.
-  String color;
+  @observable String color;
   /// The number of available armies for the player.
-  int reinforcement;
+  @observable int reinforcement;
   /// True if the player lost the game.
-  bool dead;
+  @observable bool dead;
 
   PlayerStateImpl(this.playerId, this.name, this.avatar, this.color, {this.reinforcement: 0, this.dead: false});
 }
 
 /// Stores the Risk game state.
-class RiskGameStateImpl implements RiskGameState {
+class RiskGameStateImpl extends Object with Observable implements RiskGameState {
   /// Returns the countryId / country state map.
-  Map<String, CountryStateImpl> countries = {};
+  Map<String, CountryStateImpl> countries = toObservable({});
   /// Returns the playerId / player state map.
-  Map<int, PlayerStateImpl> players = {};
+  Map<int, PlayerStateImpl> players = toObservable({});
   /// Returns the players order.
-  List<int> playersOrder = [];
+  @observable List<int> playersOrder = [];
   /// Returns the player who is playing.
-  int activePlayerId;
+  @observable int activePlayerId;
 
   /// True if the game is started.
-  bool started = false;
+  @observable bool started = false;
   /// True if the game is setuping player countries.
-  bool setupPhase = false;
+  @observable bool setupPhase = false;
   /// Return the turn step of the active player (REINFORCEMENT, ATTACK, FORTIFICATION).
-  String turnStep;
+  @observable String turnStep;
 
   /// Returns the history of all events
-  List<EngineEvent> events = [];
+  List<EngineEvent> events = toObservable([]);
 
   /// Returns all possible countryIds
   List<String> get allCountryIds => COUNTRY_BY_ID.keys.toList();
