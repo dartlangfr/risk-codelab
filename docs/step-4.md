@@ -262,7 +262,10 @@ Key information:
  - [Polymer.dart](https://www.dartlang.org/polymer-dart/)
  - [Polymer project](http://www.polymer-project.org/)
  - [A Guide to Styling Elements](http://www.polymer-project.org/articles/styling-elements.html)
- - [Shadow DOM](http://www.w3.org/TR/shadow-dom/)
+ - [Custom elements](http://w3c.github.io/webcomponents/spec/custom/)
+ - [Shadow DOM](http://w3c.github.io/webcomponents/spec/shadow/)
+ - [HTML Templates](https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/templates/index.html)
+ - [HTML Imports](http://w3c.github.io/webcomponents/spec/imports/)
 
 ### Problems?
 Check your code against the files in [s4_element](../samples/s4_element).
