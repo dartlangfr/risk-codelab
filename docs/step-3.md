@@ -160,11 +160,11 @@ Key information:
 * `RiskGameStateImpl` implements an abstract class. Unlike _Java_ there's no real interface in _Dart_. [Every class implicitly defines an interface](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html#ch02-implicit-interfaces) containing all the instance members of the class and of any interfaces it implements. So every class can be used in `implements` clause.
 * `@override` is an annotation that marks an instance member as overriding a superclass member with the same name.
 * `allCountryIds` returns all existing countries. Use `COUNTRIES` or `COUNTRY_BY_ID` to get them.
-* `countryNeighbours` computes the number of reinforcement armies at the beginning of a player turn. Follow the [Risk rules](rules.md).
-* `computeAttackerLoss` takes rolled dices in parameter in descending order. It returns the number of lost armies for the attacker according to the [Risk rules](rules.md).
-* `computeReinforcement` computes the number of reinforcement armies at the beginning of a player turn. Follow the [Risk rules](rules.md) and use the [collection API](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-core.Iterable).
+* `countryNeighbours` computes the number of reinforcement armies at the beginning of a player turn. Follow the [Risk rules](rules.md#risk-game-rules).
+* `computeAttackerLoss` takes rolled dices in parameter in descending order. It returns the number of lost armies for the attacker according to the [Risk rules](rules.md#risk-game-rules).
+* `computeReinforcement` computes the number of reinforcement armies at the beginning of a player turn. Follow the [Risk rules](rules.md#risk-game-rules) and use the [collection API](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-core.Iterable).
   Advise: create a method `playerCountries` that returns the country ids owned by the player.
-* `update` updates the game state in function of the incoming event. Follow the [Events bible](events.md) and run the tests.
+* `update` updates the game state in function of the incoming event. Follow the [Events bible](events.md#risk-game-events) and run the tests.
 
 ### Learn more
  - [Dart Language - Libraries](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html#libraries)
