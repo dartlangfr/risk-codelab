@@ -219,4 +219,4 @@ Open `test/s2_class_test.dart`.
 ### Problems?
 Check your code against the files in [s2_classes](../samples/s2_classes).
 
-## [Home](../README.md) | [< Previous](step-1.md) | [Next >](step-3.md)
+## [Home](../README.md) | [< Previous](step-1.md#step-1-run-the-app-and-view-its-code) | [Next >](step-3.md#step-3-risk-game)

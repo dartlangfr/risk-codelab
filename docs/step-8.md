@@ -189,5 +189,5 @@ This actually does not work due to an incompatibility between the generic types 
 ### Problems?
 Check your code against the files in [s8_serialization](../samples/s8_serialization).
 
-## [Home](../README.md) | [< Previous](step-7.md) | [Next >](step-9.md)
+## [Home](../README.md) | [< Previous](step-7.md#step-7-player-enrollment) | [Next >](step-9.md#step-9-server-side)
 

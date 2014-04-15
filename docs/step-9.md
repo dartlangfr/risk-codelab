@@ -1,9 +1,9 @@
-## Step 9 : Server side
+## Step 9: Server side
 
 _**Keywords**: server, virtual directory, websocket_
 
 
-It's time for you to begin de server side of the dart programming. To getting starting, take a look to `bin/main.dart` file, it's where you will code your server :
+It's time for you to begin the server side of the dart programming. To getting starting, take a look to `bin/main.dart` file, it's where you will code your server :
 
 ```Dart
 library risk.main;
@@ -139,4 +139,4 @@ To check if all continue to work correctly, just stop restart your running serve
 ### Problems?
 Check your code against the files in [s9_server](../samples/s9_server).
 
-## [Home](../README.md) | [< Previous](step-8.md) | [Next >](step-10.md)
+## [Home](../README.md) | [< Previous](step-8.md#step-8-event-serialization) | [Next >](step-10.md#step-10-put-it-all-together)

@@ -337,5 +337,5 @@ Unlike the `close` event fired by `<risk-modal>` this `done` event comes with ad
 ### Problems?
 Check your code against the files in [s7_enrollment](../samples/s7_enrollment).
 
-## [Home](../README.md) | [< Previous](step-6.md) | [Next >](step-8.md)
+## [Home](../README.md) | [< Previous](step-6.md#step-6-risk-board) | [Next >](step-8.md#step-8-event-serialization)
 

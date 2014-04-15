@@ -173,4 +173,4 @@ Key information:
 ### Problems?
 Check your code against the files in [s3_game](../samples/s3_game).
 
-## [Home](../README.md) | [< Previous](step-2.md) | [Next >](step-4.md)
+## [Home](../README.md) | [< Previous](step-2.md#step-2-dart-classes) | [Next >](step-4.md#step-4-polymer-custom-element)

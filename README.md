@@ -23,7 +23,7 @@ This code lab has the following sections:
 * [Step 6: Map](docs/step-6.md#step-6-risk-board)
 * [Step 7: Player enrollment](docs/step-7.md#step-7-player-enrollment)
 * [Step 8: Events serialization](docs/step-8.md#step-8-event-serialization)
-* [Step 9: Server](docs/step-9.md#step-9--server-side)
+* [Step 9: Server](docs/step-9.md#step-9-server-side)
 * [Step 10: Put it all together](docs/step-10.md#step-10-put-it-all-together)
 
 

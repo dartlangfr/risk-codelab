@@ -347,4 +347,4 @@ Key information:
 ### Problems?
 Check your code against the files in [s6_board](../samples/s6_board).
 
-## [Home](../README.md) | [< Previous](step-5.md) | [Next >](step-7.md)
+## [Home](../README.md) | [< Previous](step-5.md#step-5-polymer-templates) | [Next >](step-7.md#step-7-player-enrollment)

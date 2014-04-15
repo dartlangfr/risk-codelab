@@ -31,4 +31,4 @@ button on the Dart homepage.
 You should now have a directory called `risk-codelab-master`.
 
 
-## [Home](../README.md) | [Next >](step-1.md)
+## [Home](../README.md#code-lab-polymerdart) | [Next >](step-1.md#step-1-run-the-app-and-view-its-code)
