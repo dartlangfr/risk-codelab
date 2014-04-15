@@ -139,4 +139,4 @@ To check if all continue to work correctly, just stop restart your running serve
 ### Problems?
 Check your code against the files in [s9_server](../samples/s9_server).
 
-## [Home](../README.md) | [< Previous](step-8.md#step-8-event-serialization) | [Next >](step-10.md#step-10-put-it-all-together)
+## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-8.md#step-8-event-serialization) | [Next >](step-10.md#step-10-put-it-all-together)

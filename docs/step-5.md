@@ -192,4 +192,4 @@ Key information:
 ### Problems?
 Check your code against the files in [s5_template](../samples/s5_template).
 
-## [Home](../README.md) | [< Previous](step-4.md#step-4-polymer-custom-element) | [Next >](step-6.md#step-6-risk-board)
+## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-4.md#step-4-polymer-custom-element) | [Next >](step-6.md#step-6-risk-board)

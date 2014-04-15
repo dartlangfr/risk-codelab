@@ -178,4 +178,4 @@ Standard output is printed in a console window inside the IDE.
 You should see _Hello World!_.
 
 
-## [Home](../README.md) | [< Previous](step-0.md#step-0-set-up) | [Next >](step-2.md#step-2-dart-classes)
+## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-0.md#step-0-set-up) | [Next >](step-2.md#step-2-dart-classes)

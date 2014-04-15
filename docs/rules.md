@@ -30,6 +30,8 @@ Because this phase can be a little long it is done automatically by the engine. 
 
 Once all armies are placed the game can really start.
 
+![Board](img/s6-countries-building.png)
+
 ## Player turn
 
 The players plays one after the other. The turn of one player contains 3 phases: _Reinforcement_, _Attack_ and _Fortification_
