@@ -14,17 +14,17 @@ Polymer.dart is in beta, and its API is subject to change.
 
 This code lab has the following sections:
 
-* [Step 0: Set up](docs/step-0.md)
-* [Step 1: Basics](docs/step-1.md)
-* [Step 2: Classes](docs/step-2.md)
-* [Step 3: Game](docs/step-3.md)
-* [Step 4: First custom element](docs/step-4.md)
-* [Step 5: Players list](docs/step-5.md)
-* [Step 6: Map](docs/step-6.md)
-* [Step 7: Player enrollment](docs/step-7.md)
-* [Step 8: Events serialization](docs/step-8.md)
-* [Step 9: Server](docs/step-9.md)
-* [Step 10: Put it all together](docs/step-10.md)
+* [Step 0: Set up](docs/step-0.md#step-0-set-up)
+* [Step 1: Basics](docs/step-1.md#step-1-run-the-app-and-view-its-code)
+* [Step 2: Classes](docs/step-2.md#step-2-dart-classes)
+* [Step 3: Game](docs/step-3.md#step-3-risk-game)
+* [Step 4: First custom element](docs/step-4.md#step-4-polymer-custom-element)
+* [Step 5: Players list](docs/step-5.md#step-5-polymer-templates)
+* [Step 6: Map](docs/step-6.md#step-6-risk-board)
+* [Step 7: Player enrollment](docs/step-7.md#step-7-player-enrollment)
+* [Step 8: Events serialization](docs/step-8.md#step-8-event-serialization)
+* [Step 9: Server](docs/step-9.md#step-9--server-side)
+* [Step 10: Put it all together](docs/step-10.md#step-10-put-it-all-together)
 
 
 ### Useful links
