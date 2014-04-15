@@ -341,8 +341,11 @@ Key information:
 * `selectable` highlights selectable countries depending on the game state and selected country.
 
 ### Learn more
- - [Polymer.dart](https://www.dartlang.org/polymer-dart/)
- - [Polymer expressions](https://pub.dartlang.org/packages/polymer_expressions)
+ - [SVG](http://www.w3.org/Graphics/SVG/)
+ - [HttpRequest](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-dom-html.HttpRequest)
+ - [Future](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-async.Future)
+ - [Use Future-Based APIs](https://www.dartlang.org/docs/tutorials/futures/)
+ - [Futures and Error Handling](https://www.dartlang.org/articles/futures-and-error-handling/)
  
 ### Problems?
 Check your code against the files in [s6_board](../samples/s6_board).
