@@ -109,7 +109,7 @@ Ok, what have we just done?
  
  
 To finish this first part, we will add a a security for our server be more reliable. In Dart like in the Angular project ([learn more](https://github.com/btford/zone.js/)) , the Google Teams have introduce a concept of "Zone".
-A Zone in Dart it's a container for asynchronious code ensuring that any error of exceptional behavior don't impect the rest of the program and keep it safe. Modify the 'bin/main.dart' file to wrap our server initialising and listening with this container, like this:
+A Zone in Dart it's a container for asynchronous code ensuring that any error of exceptional behavior doesn't impact the rest of the program and keep it safe. Modify the `bin/main.dart` file to wrap our server initialization and listen safely with this container, like this:
 
 ```Dart
 // imports & vars ....
@@ -134,9 +134,9 @@ main(List<String> args) {
 ```
 
 Key information:
- * `runZoned` it's a simple top-level function who execute its callback passed in parameter in a new seperate zone. The second argumennt of this function is the error handler.
- 
-To check if all continue to work correctly, just stop restart your running server and check your browser.
+ * `runZoned` it's a simple top-level function who execute its callback passed in parameter in a new separate zone. The second argumennt of this function is the error handler.
+
+To check if all continue to work correctly, just restart your running server and check your browser.
 
 ### Problems?
 Check your code against the files in [s9_server](../samples/s9_server).
