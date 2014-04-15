@@ -5,7 +5,7 @@ Polymer.Dart is the Dart version of Polymer Project, a client-side library that 
 
 In this two-hour code lab, you'll create a [risk game](docs/rules.md#risk-game-rules) composed of a Web Socket server and an Polymer.Dart web app.
 
-Try the [live demo](dartlangfr-risk.herokuapp.com).
+Try the [live demo](http://dartlangfr-risk.herokuapp.com).
 
 **Important:**
 Polymer.dart is in beta, and its API is subject to change.
