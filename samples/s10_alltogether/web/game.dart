@@ -9,12 +9,11 @@ import 'package:risk/risk.dart';
 class RiskGame extends AbstractRiskGame {
   RiskGame.created(): super.created();
 
-  // TODO: implement eventEngineCodec
   @override
-  Codec<Object, Map> get eventEngineCodec => null; // EVENT
+  Codec<Object, Map> get eventEngineCodec => EVENT;
 
   @override
-  final RiskGameState game = loadEventsAsync(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK);
+  final RiskGameState game = new RiskGameStateImpl();
 
   /// Listen events on the given [webSocket].
   @override

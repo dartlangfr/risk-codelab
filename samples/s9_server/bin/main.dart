@@ -1,4 +1,4 @@
-library risk.server;
+library risk.main;
 
 import 'dart:io';
 import 'dart:async';

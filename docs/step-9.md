@@ -3,10 +3,10 @@
 _**Keywords**: server, virtual directory, websocket_
 
 
-It's time for you to begin de server side of the dart programming. To getting starting, take a look to /bin/server.dart file, it's where you will code your server :
+It's time for you to begin de server side of the dart programming. To getting starting, take a look to `bin/main.dart` file, it's where you will code your server :
 
 ```Dart
-library risk.server;
+library risk.main;
 
 import 'dart:io';
 import 'dart:async';
@@ -51,7 +51,7 @@ Key information:
  * We define the two defaults values with `const DEFAULT_PORT = 8080;` and `const DEFAULT_PATH = '../web';`. Note that they are `const` and not `static` or `final` variables who exist too in dart, go [here](http://news.dartlang.org/2012/06/const-static-final-oh-my.html) to have more details about theirs differences
  * The top-level `main` function in Dart the entry point of the programme like Java, and like Java you can pass arguments by command line to the program when it be started. The two lines in the `main` function are just two ternary operator to override the default values if their are passed.
  
-Continue to edit the `bin/server.dart` file to add the server listening :
+Continue to edit the `bin/main.dart` file to add the server listening :
 
 ```Dart
 library risk.server;
@@ -91,10 +91,10 @@ void directoryHandler(dir, request) {
 
 Let's try your server :
  * With your terminal, go into the `ROOT_PROJECT/s9_server` directory.
- * run the `pub bin\server.dart` command.
+ * run the `pub bin/main.dart` command.
  
 You should see _"Risk is running on http://localhost:8080
-Base path: /Users/mbreton/workspace/risk-codelab/samples/s9_server/web"_
+Base path: /home/you/risk-codelab-master/samples/s9_server/web"_
 
 Check if the web interface is available, open Chromium and go to `http://localhost:8080`. You should the famous index page.
 
@@ -107,7 +107,7 @@ Ok, what have we just done ?
  
  
 To finish this first part, we will add a a security for our server be more reliable. In Dart like in the Anuglar project( (learn more)[https://github.com/btford/zone.js/] ) , the Google Teams have introduce a concept of "Zone".
-A Zone in Dart it's a container for asynchronious code ensuring that any error of exceptional behavior don't impect the rest of the program and keep it safe. Modify the 'bin/server.dart' file to wrap our server initialising and listening with this container, like this :
+A Zone in Dart it's a container for asynchronious code ensuring that any error of exceptional behavior don't impect the rest of the program and keep it safe. Modify the 'bin/main.dart' file to wrap our server initialising and listening with this container, like this :
 
 ```Dart
 // imports & vars ....
@@ -135,4 +135,8 @@ Key information:
  * `runZoned` it's a simple top-level function who execute its callback passed in parameter in a new seperate zone. The second argumennt of this function is the error handler.
  
 To check if all continue to work correctly, just stop restart your running server and check your browser.
- 
+
+### Problems?
+Check your code against the files in [s9_server](../samples/s9_server).
+
+## [Home](../README.md) | [< Previous](step-8.md) | [Next >](step-10.md)
