@@ -104,3 +104,5 @@ After this optional last move it's up to the next player to play.
 ## End of game
 
 When there's only one player left he win the game.
+
+## [Home](../README.md#code-lab-polymerdart) | [Step 3](step-3.md#step-3-risk-game)

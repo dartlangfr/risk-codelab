@@ -41,3 +41,5 @@
 | ArmyMoved | Attack | Sent when the player moved armies in the conquered contry |
 | NextStep | Attack | Sent when the active player ended attacking and started fortification |
 | ArmyMoved | Fortification | Sent when the active player move armies for fortification |
+
+## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-3.md#step-3-risk-game)
