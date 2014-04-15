@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="packages/bootstrap_for_pub/3.1.0/css/bootstrap-theme.min.css">
 
     <ul id="players" class="list-group list-group-inverse img-rounded">
-      <template repeat="{{ player in players | sort(playersOrder) }}">
+      <template repeat="{{ player in players }}">
         <li class="list-group-item {{ {'active': player.playerId == activePlayerId} }}">
           <img src="img/avatars/{{ player.avatar }}" style="border-color: {{ player.color }}" class="img-rounded" alt="Avatar">
-          <span><b>{{ player.name }}</b></span>
+          <span><b>{{ player.name | capitalize }}</b></span>
           <span class="badge pull-right">
             <i class="riskicon riskicon-soldier"></i>
             <template if="{{ player.reinforcement >= 2 }}">
