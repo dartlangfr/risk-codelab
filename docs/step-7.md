@@ -126,6 +126,8 @@ Key information:
 
 You should see a modal panel with the title you provided and the original content displayed.
 
+![Basic Modal Panel](img/s7-basic-modal.png)
+
 #### Closable modal panel
 
 You will now improve the modal panel to allow it to be closable.
@@ -158,6 +160,8 @@ Key information:
 * By clicking on the _close button_ a [CustomEvent](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-dom-html.CustomEvent) will be fired on the element. This event can be handled outside of the element with: `<risk-modal on-close="...">`.
 
 To test this new behaviour add `closable="{{ true }}" on-close="{{ close }}"` in `web/game.html` and `close(CustomEvent e, var detail, Element target) => target.remove();` in `web/game.dart`. Run in Dartium.
+
+![Closable Modal Panel](img/s7-modal-closable.png)
 
 ### Create a basic registration form
 
@@ -257,6 +261,8 @@ class RiskRegistration extends PolymerElement {
 ```
 
 &rarr; Run in Dartium.
+
+![Registration form](img/s7-registration.png)
 
 Key information:
 * The two-way data binding makes forms really easy to handle. Any change in the input is reflected directly on the property of the class.
