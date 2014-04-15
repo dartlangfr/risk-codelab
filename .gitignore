@@ -15,3 +15,8 @@ pubspec.lock
 .project
 .buildlog
 .settings
+
+#Intellij Editor
+.idea/
+*.iml
+
