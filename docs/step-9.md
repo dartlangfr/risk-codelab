@@ -27,7 +27,7 @@ For the moment, it's just a simple empty main with few imports :
  
 ### Expose the index.html file
 
-Since the begining of this workshop when you ran your web app, Dartium started a web server on the fly who exposed the HTML files (and all others asserts). So, your task will be to create a server who will expose your HTML files. In a first step, add the default port and directory, and the mechanism to override them :
+Since the begining of this workshop when you ran your web app, Dartium started a web server on the fly who exposed the HTML files (and all others assets). So, your task will be to create a server who will expose your HTML files. In a first step, add the default port and directory, and the mechanism to override them :
 
 ```Dart
 library risk.server;
