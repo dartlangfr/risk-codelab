@@ -112,6 +112,8 @@ class RiskGameStateImpl implements RiskGameState {
     } else if (event is ArmyMoved) {
       countries[event.from].armies -= event.armies;
       countries[event.to].armies += event.armies;
+    } else if (event is PlayerLost) {
+      players[event.playerId].dead = true;
     }
   }
 }

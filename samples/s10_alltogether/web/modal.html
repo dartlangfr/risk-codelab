@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<polymer-element name="risk-modal">
+  <template>
+    <style>
+      :host {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: rgba(256,256,256,0.8);
+      }
+
+      #title {
+        border-bottom: 1px solid lightgray;
+      }
+
+      #panel {
+        background-color: white;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        padding: 10px;
+        width: 80%;
+        max-width: 768px;
+        margin: 5% auto 0;
+        max-height: 80%;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      #close {
+        float: right;
+        border: 1px solid lightgray;
+      }
+    </style>
+
+    <div id="panel">
+      <template if="{{ closable }}">
+        <button id="close" on-click="{{ close }}">&times;</button>
+      </template>
+      <h4 id="title">{{ title }}</h4>
+      <content></content>
+    </div>
+  </template>
+  <script type="application/dart" src="modal.dart"></script>
+</polymer-element>

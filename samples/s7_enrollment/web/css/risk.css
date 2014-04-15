@@ -1,0 +1,125 @@
+.vcenter {
+  vertical-align: middle;
+}
+
+.list-group-inverse {
+  background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+  background-image:         linear-gradient(to bottom, #3c3c3c 0%, #222 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #080808;
+  color: #ccc;
+}
+
+.list-group-inverse .list-group-item {
+  background-color: transparent;
+}
+
+.list-group-inverse .list-group-item.active {
+  color: #fff;
+}
+
+svg > * {
+  cursor:default;
+
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
+
+@keyframes highlight {
+  from { opacity: 1; }
+  to { opacity: 0.8; }
+}
+
+#players img {
+  width: 48px;
+  border-width: 0 0 0 5px;
+  border-style: solid;
+}
+
+#history img {
+  width: 20px;
+}
+
+#history .pre-scrollable {
+  max-height: 100px;
+}
+
+#battle img {
+  width: 48px;
+}
+
+#battle .country .riskicon {
+  font-size: 7em;
+}
+
+#battle .army .riskicon-soldier {
+  font-size: 2em;
+}
+
+@font-face {
+  font-family: 'Risk';
+
+  src: url(../fonts/risk-font.ttf) format("truetype");
+}
+.riskicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Risk';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1em;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.riskicon-soldier:before { content: "!"; }
+.riskicon-afghanistan:before { content: "A"; }
+.riskicon-alaska:before { content: "B"; }
+.riskicon-alberta:before { content: "C"; }
+.riskicon-argentina:before { content: "D"; }
+.riskicon-brazil:before { content: "E"; }
+.riskicon-central_america:before { content: "F"; }
+.riskicon-china:before { content: "G"; }
+.riskicon-congo:before { content: "H"; }
+.riskicon-east_africa:before { content: "I"; }
+.riskicon-eastern_australia:before { content: "J"; }
+.riskicon-eastern_united_states:before { content: "K"; }
+.riskicon-egypt:before { content: "L"; }
+.riskicon-great_britain:before { content: "M"; }
+.riskicon-greenland:before { content: "N"; }
+.riskicon-iceland:before { content: "O"; }
+.riskicon-india:before { content: "P"; }
+.riskicon-indonesia:before { content: "Q"; }
+.riskicon-irkutsk:before { content: "R"; }
+.riskicon-japan:before { content: "S"; }
+.riskicon-kamchatka:before { content: "T"; }
+.riskicon-madagascar:before { content: "U"; }
+.riskicon-middle_east:before { content: "V"; }
+.riskicon-mongolia:before { content: "W"; }
+.riskicon-new_guinea:before { content: "X"; }
+.riskicon-north_africa:before { content: "Y"; }
+.riskicon-northern_europe:before { content: "Z"; }
+.riskicon-northwest_territory:before { content: "a"; }
+.riskicon-ontario:before { content: "b"; }
+.riskicon-peru:before { content: "c"; }
+.riskicon-quebec:before { content: "d"; }
+.riskicon-scandinavia:before { content: "e"; }
+.riskicon-siam:before { content: "f"; }
+.riskicon-siberia:before { content: "g"; }
+.riskicon-south_africa:before { content: "h"; }
+.riskicon-southern_europe:before { content: "i"; }
+.riskicon-ukraine:before { content: "j"; }
+.riskicon-ural:before { content: "k"; }
+.riskicon-venezuela:before { content: "l"; }
+.riskicon-western_australia:before { content: "m"; }
+.riskicon-western_europe:before { content: "n"; }
+.riskicon-western_united_states:before { content: "o"; }
+.riskicon-yakursk:before { content: "p"; }

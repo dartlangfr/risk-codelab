@@ -1,9 +1,16 @@
 library risk_engine.snapshot;
 
+import 'dart:async';
 import 'risk_engine.dart';
 
-RiskGameState loadEvents(RiskGameState game, Iterable<EngineEvent> events) {
+RiskGameState loadEventsSync(RiskGameState game, Iterable<EngineEvent> events) {
   events.forEach(game.update);
+  return game;
+}
+
+RiskGameState loadEventsAsync(RiskGameState game, Iterable<EngineEvent> events, {Duration period: const Duration(milliseconds: 50)}) {
+  var e = events.toList();
+  new Stream.periodic(period, (i) => i).map((i) => e[i]).listen(game.update, onError: (e) => null, cancelOnError: true);
   return game;
 }
 

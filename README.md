@@ -18,12 +18,13 @@ This code lab has the following sections:
 * [Step 1: Basics](docs/step-1.md)
 * [Step 2: Classes](docs/step-2.md)
 * [Step 3: Game](docs/step-3.md)
-* [Step 4: First Polymer custom element](docs/step-4.md)
+* [Step 4: First custom element](docs/step-4.md)
 * [Step 5: Players list](docs/step-5.md)
 * [Step 6: Map](docs/step-6.md)
 * [Step 7: Player enrollment](docs/step-7.md)
 * [Step 8: Events serialization](docs/step-8.md)
 * [Step 9: Server](docs/step-9.md)
+* [Step 10: Put it all together](docs/step-10.md)
 
 
 ### Useful links

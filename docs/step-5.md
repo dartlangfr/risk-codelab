@@ -173,7 +173,7 @@ class RiskPlayers extends PolymerElement {
 </ul>
 ```
 
-&rarr; Complete the `tokenList` filter to enable `active` class if it is the active player in function of `activePlayerId` value.  
+&rarr; Complete the [`tokenList` filter](http://www.polymer-project.org/docs/polymer/filters.html#tokenlist) to enable `active` class if it is the active player in function of `activePlayerId` value.  
 &rarr; Run in Dartium.
 
 You should see something like:
@@ -190,6 +190,6 @@ Key information:
  - [Polymer expressions](https://pub.dartlang.org/packages/polymer_expressions)
  
 ### Problems?
-Check your code against the files in [s5_template](../samples/s5_template).
+Check your code against the files in [s10_alltogether](../samples/s10_alltogether).
 
-## [Home](../README.md) | [< Previous](step-4.md) | [Next >](step-6.md)
+## [Home](../README.md) | [< Previous](step-9.md) | [End >](end.md)
