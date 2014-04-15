@@ -187,8 +187,9 @@ Key information:
 
 ### Learn more
  - [Polymer.dart](https://www.dartlang.org/polymer-dart/)
+ - [Polymer templates](https://www.dartlang.org/polymer-dart/#template-conditionals)
  - [Polymer expressions](https://pub.dartlang.org/packages/polymer_expressions)
- 
+
 ### Problems?
 Check your code against the files in [s5_template](../samples/s5_template).
 
