@@ -121,5 +121,5 @@ You finish this codelab. Enjoy your job and play Risk with your friends :)
 ### Problems?
 Check your code against the files in [s10_alltogether](../samples/s10_alltogether).
 
-## [Home](../README.md) | [< Previous](step-9.md#step-9-server-side) | [End >](end.md)
+## [Home](../README.md) | [< Previous](step-9.md#step-9-server-side)
 
