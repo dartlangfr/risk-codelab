@@ -330,10 +330,6 @@ Unlike the `close` event fired by `<risk-modal>` this `done` event comes with ad
 
 &rarr; In `web/game.html` add `on-done='{{ joinGame }}'` and implement `joinGame` in `web.game.dart` to print the detail in the console.
 
-### Learn more
- - [Polymer.dart](https://www.dartlang.org/polymer-dart/)
- - [Polymer expressions](https://pub.dartlang.org/packages/polymer_expressions)
- 
 ### Problems?
 Check your code against the files in [s7_enrollment](../samples/s7_enrollment).
 
