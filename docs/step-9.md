@@ -106,7 +106,7 @@ Ok, what have we just done ?
  * Finally, we add a listener handler of the client request and we forward this request directly to the virtual directory.
  
  
-To finish this first part, we will add a a security for our server be more reliable. In Dart like in the Anuglar project( (learn more)[https://github.com/btford/zone.js/] ) , the Google Teams have introduce a concept of "Zone".
+To finish this first part, we will add a a security for our server be more reliable. In Dart like in the Angular project ([learn more](https://github.com/btford/zone.js/)) , the Google Teams have introduce a concept of "Zone".
 A Zone in Dart it's a container for asynchronious code ensuring that any error of exceptional behavior don't impect the rest of the program and keep it safe. Modify the 'bin/main.dart' file to wrap our server initialising and listening with this container, like this :
 
 ```Dart
