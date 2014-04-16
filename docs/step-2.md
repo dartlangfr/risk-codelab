@@ -134,7 +134,7 @@ final List<Country> COUNTRIES = [//
   new Country('mongolia', ['china', 'siberia', 'irkutsk', 'kamchatka', 'japan']), //
   new Country('siam', ['india', 'china', 'indonesia']), //
   new Country('siberia', ['yakursk', 'irkutsk', 'mongolia', 'china', 'ural']), //
-  new Country('yakursk', ['kamchatka', 'siberia', 'irkutsk', 'eastern_australia'])//
+  new Country('yakursk', ['kamchatka', 'siberia', 'irkutsk', 'eastern_australia']),//
   new Country('eastern_australia', ['western_australia', 'new_guinea', 'eastern_australia']), //
 ];
 
