@@ -18,7 +18,7 @@ class RiskBoard extends AbstractRiskBoardElement {
   RiskGameState game = loadEventsAsync(new RiskGameStateImpl(), SNAPSHOT_GAME_ATTACK);
 
   RiskBoard.created(): super.created() {
-    HttpRequest.getString('res/country-paths.json').then(JSON.decode).then((e) => paths = e);
+    HttpRequest.getString('res/country-paths.json').then(JSON.decode).then(toObservable).then((e) => paths = e);
   }
 
   countrySelect(Event e, var detail, Element target) {

@@ -71,7 +71,7 @@ class RiskBoard extends PolymerElement {
   Map<String, Map> paths;
 
   RiskBoard.created(): super.created() {
-    HttpRequest.getString('res/country-paths.json').then(JSON.decode).then((e) => paths = e);
+    HttpRequest.getString('res/country-paths.json').then(JSON.decode).then(toObservable).then((e) => paths = e);
   }
 }
 ```
@@ -85,6 +85,7 @@ Key information:
   * The callback function for `.then()` is called when the Future completes successfully.
   * When the `Future` completes successfully, the json content is read then set to the `paths` field.
 * `@observable` specifies that `paths` is an observable property for use in Model-Driven-Views (MDV). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model.
+* `toObservable()` converts a `Map` to an `ObservableMap`. This is needed for the compiled JavaScript version, to be able to bind on the `Map.keys` property.
 
 ### Draw country contours
 
@@ -266,13 +267,6 @@ class RiskGameStateImpl extends Object with Observable implements RiskGameState 
 
   List<EngineEvent> events = toObservable([]);
 
-  void update(EngineEvent event) {
-      // ...
-
-      // Because of a bug in ObservableMap, workaround for now before the fix https://codereview.chromium.org/213743012/
-      notifyPropertyChange(#countries, {}, countries);
-      notifyPropertyChange(#players, {}, players);
-  }
   // ...
 }
 ```

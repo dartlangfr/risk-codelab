@@ -25,6 +25,7 @@ This component will further contain all the components binded together to make t
 &rarr; Create a new file `web/game.dart`, with the following content:
 
 ```dart
+import 'dart:html';
 import 'package:polymer/polymer.dart';
 
 @CustomTag('risk-game')

@@ -60,7 +60,7 @@ _**Keywords**: WebSocket client, enjoy_
 </polymer-element>
 ```
 
-&rarr; In `web/game.html`, extend `RiskGame` with `AbstractRiskGame` and implement the missing methods:
+&rarr; In `web/game.dart`, extend `RiskGame` with `AbstractRiskGame` and implement the missing methods:
 
 ```Dart
 import 'dart:convert';

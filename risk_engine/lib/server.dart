@@ -1,4 +1,4 @@
-library risk_engine;
+library risk_engine.server;
 
 import 'dart:async';
 import 'dart:math';

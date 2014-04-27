@@ -1,9 +1,4 @@
-library risk_engine;
-
-// Declare libraries needed for Polymer in dart2js version
-// risk should be declared in risk library but it's here just for exercise simplification
-@MirrorsUsed(targets: const ['risk_engine', 'risk'])
-import 'dart:mirrors';
+library risk_engine.client;
 
 import 'dart:convert';
 import 'dart:html';

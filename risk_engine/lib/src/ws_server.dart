@@ -1,4 +1,4 @@
-part of risk_engine;
+part of risk_engine.server;
 
 abstract class AbstractRiskWsServer {
   final Map<int, WebSocket> _clients = {};

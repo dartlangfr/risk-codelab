@@ -1,4 +1,4 @@
-part of risk_engine;
+part of risk_engine.client;
 
 /// Brings some logical facilitation for RiskBoard element
 abstract class AbstractRiskBoardElement extends PolymerElement {
@@ -96,8 +96,10 @@ abstract class AbstractRiskGame extends PolymerElement {
   @observable
   Move pendingMove;
 
-  AbstractRiskGame.created(): this.fromWebSocket(new WebSocket(_currentWebSocketUri().toString())); // , snapshot: SNAPSHOT_GAME_ATTACK);
+  AbstractRiskGame.created(): this.forUrl(_currentWebSocketUri());
 
+  AbstractRiskGame.forUrl(String url): this.fromWebSocket(new WebSocket(url));
+  
   AbstractRiskGame.fromWebSocket(this.ws): super.created() {
     listen(ws);
   }
@@ -189,7 +191,7 @@ abstract class AbstractRiskGame extends PolymerElement {
   };
 }
 
-Uri _currentWebSocketUri() {
+String _currentWebSocketUri() {
   var uri = Uri.parse(window.location.toString());
-  return new Uri(scheme: "ws", host: uri.host, port: uri.port, path: "/ws");
+  return new Uri(scheme: "ws", host: uri.host, port: uri.port, path: "/ws").toString();
 }

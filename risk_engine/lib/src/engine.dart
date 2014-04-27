@@ -1,4 +1,4 @@
-part of risk_engine;
+part of risk_engine.server;
 
 bool autoSetup = new String.fromEnvironment('autoSetup', defaultValue: 'true')
     == 'true';
@@ -11,7 +11,7 @@ class EngineException {
 
 class RiskGameEngine {
   final RiskGameState game;
-  final EventSink<EngineEvent> outputStream;
+  final StreamController outputStream;
   final List<EngineEvent> history = [];
 
   final Hazard hazard;
