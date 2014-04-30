@@ -119,7 +119,7 @@ You finish this codelab. Enjoy your job and play Risk with your friends :)
  - [Polymer expressions](https://pub.dartlang.org/packages/polymer_expressions)
  
 ### Problems?
-Check your code against the files in [s10_alltogether](../samples/s10_alltogether).
+Check your code against the files in [s10_alltogether](../samples/s10_alltogether) ([diff](../../../compare/s9_server...s10_alltogether)).
 
 ## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-9.md#step-9-server-side)
 

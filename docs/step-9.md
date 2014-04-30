@@ -259,6 +259,6 @@ You can restart your server in your terminal.
 
 
 ### Problems?
-Check your code against the files in [s9_server](../samples/s9_server).
+Check your code against the files in [s9_server](../samples/s9_server) ([diff](../../../compare/s8_serialization...s9_server)).
 
 ## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-8.md#step-8-event-serialization) | [Next >](step-10.md#step-10-put-it-all-together)

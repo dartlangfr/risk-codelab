@@ -191,6 +191,6 @@ Key information:
  - [Polymer expressions](https://pub.dartlang.org/packages/polymer_expressions)
 
 ### Problems?
-Check your code against the files in [s5_template](../samples/s5_template).
+Check your code against the files in [s5_template](../samples/s5_template) ([diff](../../../compare/s4_element...s5_template)).
 
 ## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-4.md#step-4-polymer-custom-element) | [Next >](step-6.md#step-6-risk-board)

@@ -171,6 +171,6 @@ Key information:
  - [Collection API](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-core.Iterable)
 
 ### Problems?
-Check your code against the files in [s3_game](../samples/s3_game).
+Check your code against the files in [s3_game](../samples/s3_game) ([diff](../../../compare/s2_classes...s3_game)).
 
 ## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-2.md#step-2-dart-classes) | [Next >](step-4.md#step-4-polymer-custom-element)

@@ -187,7 +187,7 @@ This actually does not work due to an incompatibility between the generic types 
  - [dart:mirrors - Reflection](https://www.dartlang.org/docs/dart-up-and-running/contents/ch03.html#ch03-mirrors)
  
 ### Problems?
-Check your code against the files in [s8_serialization](../samples/s8_serialization).
+Check your code against the files in [s8_serialization](../samples/s8_serialization) ([diff](../../../compare/s7_enrollment...s8_serialization)).
 
 ## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-7.md#step-7-player-enrollment) | [Next >](step-9.md#step-9-server-side)
 

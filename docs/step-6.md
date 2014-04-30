@@ -342,6 +342,6 @@ Key information:
  - [Futures and Error Handling](https://www.dartlang.org/articles/futures-and-error-handling/)
  
 ### Problems?
-Check your code against the files in [s6_board](../samples/s6_board).
+Check your code against the files in [s6_board](../samples/s6_board) ([diff](../../../compare/s5_template...s6_board)).
 
 ## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-5.md#step-5-polymer-templates) | [Next >](step-7.md#step-7-player-enrollment)

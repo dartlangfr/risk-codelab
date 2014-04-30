@@ -217,6 +217,6 @@ Open `test/s2_class_test.dart`.
  - [Unit Testing with Dart](https://www.dartlang.org/articles/dart-unit-tests/)
 
 ### Problems?
-Check your code against the files in [s2_classes](../samples/s2_classes).
+Check your code against the files in [s2_classes](../samples/s2_classes) ([diff](../../../compare/s1_basics...s2_classes)).
 
 ## [Home](../README.md#code-lab-polymerdart) | [< Previous](step-1.md#step-1-run-the-app-and-view-its-code) | [Next >](step-3.md#step-3-risk-game)
