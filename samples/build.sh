@@ -1,6 +1,5 @@
 #!/bin/bash -e
 
-PWD=`pwd`
 STEPS=(s1_basics s2_classes s3_game s4_element s5_template s6_board s7_enrollment s8_serialization s9_server s10_alltogether)
 MAX_PROCS=${MAX_PROCS:=1}
 
