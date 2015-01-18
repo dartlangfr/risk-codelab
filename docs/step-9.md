@@ -40,7 +40,7 @@ import 'package:http_server/http_server.dart' show VirtualDirectory;
 import 'package:risk_engine/server.dart';
 import '../lib/risk.dart';
 
-const DEFAULT_PORT = 8080;
+const DEFAULT_PORT = 3000;
 const DEFAULT_PATH = '../web';
 
 main(List<String> args) {
@@ -50,7 +50,7 @@ main(List<String> args) {
 ```
 
 Key information:
- * We define the two defaults values with `const DEFAULT_PORT = 8080;` and `const DEFAULT_PATH = '../web';`. Note that they are `const` and not `static` or `final` variables who exist too in dart, go [here](http://news.dartlang.org/2012/06/const-static-final-oh-my.html) to have more details about theirs differences
+ * We define the two defaults values with `const DEFAULT_PORT = 3000;` and `const DEFAULT_PATH = '../web';`. Note that they are `const` and not `static` or `final` variables who exist too in dart, go [here](http://news.dartlang.org/2012/06/const-static-final-oh-my.html) to have more details about theirs differences
  * The top-level `main` function in Dart is the entry point of the software like Java, and like Java you can pass arguments by command line to the program when it's started. The two lines in the `main` function are just two ternary operators to override the default values.
  
 Continue to edit the `bin/main.dart` file to add the server listening :
@@ -65,7 +65,7 @@ import 'package:http_server/http_server.dart' show VirtualDirectory;
 import 'package:risk/risk.dart';
 import 'package:risk_engine/server.dart';
 
-const DEFAULT_PORT = 8080;
+const DEFAULT_PORT = 3000;
 const DEFAULT_PATH = '../web';
 
 VirtualDirectory vDir;
@@ -97,11 +97,11 @@ Let's try your server:
 
 You should see in the IDE console window:
 ```
-Risk is running on http://localhost:8080
+Risk is running on http://localhost:3000
 Base path: /home/you/risk-codelab-master/samples/s9_server/web"
 ```
 
-Check if the web interface is available, open Dartium and go to `http://localhost:8080`. You should see the famous index page.
+Check if the web interface is available, open Dartium and go to `http://localhost:3000`. You should see the famous index page.
 
 
 Ok, what have we just done ?

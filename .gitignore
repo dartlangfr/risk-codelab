@@ -1,6 +1,7 @@
 # Don’t commit the following files and directories created by pub and dart2js
 build/
 packages
+.pub/
 *.js_
 *.js.deps
 *.js.map

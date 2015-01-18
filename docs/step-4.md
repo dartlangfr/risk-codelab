@@ -17,7 +17,6 @@ Edit `web/index.html`, as follows.
 
     <!-- Polymer bootstrap -->
     <script type="application/dart">export 'package:polymer/init.dart';</script>
-    <script src="packages/browser/dart.js"></script>
   </head>
   <body>
 ```
@@ -25,8 +24,6 @@ Edit `web/index.html`, as follows.
 Key information:
 * The first `<script>` tag automatically initializes polymer elements without 
   having to write a main for your application.
-* The `packages/browser/dart.js` script checks for native Dart support and
-  either bootstraps the Dart VM or loads compiled JavaScript instead.
 * When run in browser, the `index.html` file loads the app and calls the `main()` function in `package:polymer/init.dart` script.
 
 ### Add a basic custom element
@@ -37,7 +34,11 @@ Continue to edit `web/index.html`.
 
 ```HTML
 <html>
-  <!-- ... -->
+  <head>
+    <!-- import polymer-element's definition -->
+    <link rel="import" href="packages/polymer/polymer.html">
+    <!-- ... -->
+  </head>
   <body>
     <!-- Declare a custom element named hello-world -->
     <polymer-element name="hello-world" noscript>
@@ -133,7 +134,8 @@ Create a new file `web/hello.html`.
 &rarr; Move the element declaration from `web/index.html` to `web/hello.html`:
 
 ```HTML
-<!DOCTYPE html>
+<!-- import polymer-element's definition -->
+<link rel="import" href="packages/polymer/polymer.html">
 
 <polymer-element name="hello-world" noscript>
   <template>
@@ -155,7 +157,6 @@ Create a new file `web/hello.html`.
     <link rel="import" href="hello.html">
 
     <script type="application/dart">export 'package:polymer/init.dart';</script>
-    <script src="packages/browser/dart.js"></script>
   </head>
   <body>
     <!-- Previous hello-world element declaration is removed -->
@@ -198,7 +199,7 @@ class HelloWorld extends PolymerElement {
 &rarr; Add the binding to the field `name` of `HelloWorld` class:
 
 ```HTML
-<!DOCTYPE html>
+<link rel="import" href="packages/polymer/polymer.html">
 
 <polymer-element name="hello-world">
   <template>

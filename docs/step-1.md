@@ -68,7 +68,7 @@ the information they need to download the
 name: risk
 description: A two hour exercise, based on the Risk game, to learn Polymer.dart.
 dependencies:
-  polymer: ">=0.9.5 <0.10.0"
+  polymer: ">=0.15.5 <0.16.0"
   browser: any
   bootstrap_for_pub: ">=3.1.0 <3.2.0"
   morph: any
@@ -81,6 +81,10 @@ dev_dependencies:
 transformers:
 - polymer:
     entry_points: web/index.html
+    inline_stylesheets:
+      web/css/risk.css: false
+      packages/bootstrap_for_pub/3.1.0/css/bootstrap.min.css: false
+      packages/bootstrap_for_pub/3.1.0/css/bootstrap-theme.min.css: false
 ```
 
 Key information:
@@ -164,6 +168,7 @@ Key information:
 
 Dart Editor launches _Dartium_, a special build of Chromium that has the Dart Virtual Machine built in, and loads the `index.html` file.  
 You should see the _Risk_ navigation bar and a TO DO comment.
+_Ignore the warning in the console from Polymer Linter._
 
 <!-- Add screenshot? -->
 

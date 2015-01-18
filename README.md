@@ -9,7 +9,7 @@ Try the [live demo](http://dartlangfr-risk.herokuapp.com).
 
 **Important:**
 Polymer.dart is in beta, and its API is subject to change.
-**This code lab uses Polymer.dart version 0.9.5.**
+**This code lab uses Polymer.dart version 0.15.5.**
 
 ### Steps
 

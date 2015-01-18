@@ -11,7 +11,7 @@ This component will further contain all the components binded together to make t
 &rarr; Create a new file `web/game.html`, with the following content:
 
 ```html
-<!DOCTYPE html>
+<link rel="import" href="packages/polymer/polymer.html">
 
 <polymer-element name="risk-game">
   <template>
@@ -51,7 +51,7 @@ The registration form will appear in a modal panel. We will first create a `<ris
 &rarr; Create a new file `web/modal.html`, with the following content:
 
 ```HTML
-<!DOCTYPE html>
+<link rel="import" href="packages/polymer/polymer.html">
 
 <polymer-element name="risk-modal">
   <template>
@@ -169,7 +169,7 @@ To test this new behaviour add `closable="{{ true }}" on-close="{{ close }}"` in
 &rarr; Create a new file `web/registration.html`, with the following content:
 
 ```html
-<!DOCTYPE html>
+<link rel="import" href="packages/polymer/polymer.html">
 
 <polymer-element name="risk-registration">
   <template>
@@ -191,7 +191,7 @@ To test this new behaviour add `closable="{{ true }}" on-close="{{ close }}"` in
           </select>
           <br>
           <br>
-          <img alt="avatar" class="img-rounded" src="img/avatars/{{ avatar }}">
+          <img alt="avatar" class="img-rounded" _src="img/avatars/{{ avatar }}">
         </div>
       </div>
       <div class="form-group">

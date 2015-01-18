@@ -11,7 +11,7 @@ Create a new custom element, as follows.
 &rarr; Create a new file `web/board.html`, with the following content:
 
 ```HTML
-<!DOCTYPE html>
+<link rel="import" href="packages/polymer/polymer.html">
 
 <polymer-element name="risk-board">
   <template>

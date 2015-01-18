@@ -164,7 +164,7 @@ Key information:
 To check if `Country` and `Continent` classes are well implemented and to fix errors in constants,
 it's a good pratice to run unit tests.
 
-Open `test/s2_class_test.dart`.
+Open `test/s2_classes_test.dart`.
 
 &rarr; Get familiar with the code:
 
@@ -192,7 +192,7 @@ main() {
 }
 ```
 
-&rarr; Then run tests: right-click `test/s2_class_test.dart` and select **Run**.  
+&rarr; Then run tests: right-click `test/s2_classes_test.dart` and select **Run**.  
 &rarr; **You should have test failures in console, fix classes and/or constants**.
 
 Key information:
@@ -206,7 +206,7 @@ Key information:
 
 ### Write a test
 
-Open `test/s2_class_test.dart`.
+Open `test/s2_classes_test.dart`.
 
 &rarr; Test that `COUNTRIES` and `COUNTRY_BY_ID` have exactly 42 countries.  
 &rarr; Fix `COUNTRIES` removing the duplicated country.

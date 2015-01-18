@@ -9,7 +9,7 @@ _**Keywords**: WebSocket client, enjoy_
 &rarr; Copy and paste the template below in `web/game.html`:
 
 ```HTML
-<!DOCTYPE html>
+<link rel="import" href="packages/polymer/polymer.html">
 
 <link rel="import" href="board.html">
 <link rel="import" href="hello.html">
@@ -112,7 +112,7 @@ You finish this codelab. Enjoy your job and play Risk with your friends :)
 
 &rarr; **Run** the server `bin/main.dart`
 
-&rarr; **Launch Dartium** with the url http://localhost:8080
+&rarr; **Launch Dartium** with the url http://localhost:3000
 
 ### Learn more
  - [Polymer.dart](https://www.dartlang.org/polymer-dart/)

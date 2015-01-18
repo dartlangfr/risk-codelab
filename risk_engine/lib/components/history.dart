@@ -12,12 +12,13 @@ class RiskHistory extends PolymerElement {
   RiskGameState game;
 
   RiskHistory.created(): super.created() {
-    var content = shadowRoot.querySelector("#content");
-    
-    scrollBottom(_) => content.scrollByPages(10);
+    scrollToBottom(_) {
+      var content = shadowRoot.querySelector("div#content");
+      content.scrollTop += content.scrollHeight;
+    }
     
     onPropertyChange(this, #game, () {
-      (game.events as Observable).changes.listen(scrollBottom);
+      (game.events as Observable).changes.listen(scrollToBottom);
     });
   }
 

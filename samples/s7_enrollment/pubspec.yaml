@@ -1,7 +1,7 @@
 name: risk
 description: A two hour exercise, based on the Risk game, to learn Polymer.dart.
 dependencies:
-  polymer: ">=0.9.5 <0.10.0"
+  polymer: ">=0.15.5 <0.16.0"
   browser: any
   bootstrap_for_pub: ">=3.1.0 <3.2.0"
   morph: any
@@ -14,3 +14,7 @@ dev_dependencies:
 transformers:
 - polymer:
     entry_points: web/index.html
+    inline_stylesheets:
+      web/css/risk.css: false
+      packages/bootstrap_for_pub/3.1.0/css/bootstrap.min.css: false
+      packages/bootstrap_for_pub/3.1.0/css/bootstrap-theme.min.css: false
