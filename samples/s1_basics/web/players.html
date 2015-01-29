@@ -1,0 +1,29 @@
+<link rel="import" href="packages/polymer/polymer.html">
+
+<polymer-element name="risk-players">
+  <template>
+    <link rel="stylesheet" href="css/risk.css">
+    <link rel="stylesheet" href="packages/bootstrap_for_pub/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="packages/bootstrap_for_pub/3.1.0/css/bootstrap-theme.min.css">
+
+    <ul id="players" class="list-group list-group-inverse img-rounded">
+      <template repeat="{{ player in players }}">
+        <li class="list-group-item {{ {'active': player.playerId == activePlayerId} }}">
+          <img _src="img/avatars/{{ player.avatar }}" style="border-color: {{ player.color }}" class="img-rounded" alt="Avatar">
+          <span><b>{{ player.name | capitalize }}</b></span>
+          <span class="badge pull-right">
+            <i class="riskicon riskicon-soldier"></i>
+            <template if="{{ player.reinforcement >= 2 }}">
+              <i class="riskicon riskicon-soldier"></i>
+            </template>
+            <template if="{{ player.reinforcement >= 3 }}">
+              <i class="riskicon riskicon-soldier"></i>
+            </template>
+            {{ player.reinforcement }}
+          </span>
+        </li>
+      </template>
+    </ul>
+  </template>
+  <script type="application/dart" src="players.dart"></script>
+</polymer-element>
