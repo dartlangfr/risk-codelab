@@ -39,6 +39,10 @@ main() {
   var countryIds = COUNTRIES.map((c) => c.id);
 
   group('COUNTRIES', () {
+    test('should have 42 countries', () {
+      expect(COUNTRIES.length, equals(42));
+    });
+
     test('for each country should have at least 1 neighbour', () {
       for (final Country country in COUNTRIES) {
         expect(country.neighbours.length, isPositive);
@@ -61,6 +65,10 @@ main() {
   });
 
   group('COUNTRY_BY_ID', () {
+    test('should have 42 countries', () {
+      expect(COUNTRY_BY_ID.keys.length, equals(42));
+    });
+
     test('should be correctly indexed', () {
       expect(COUNTRY_BY_ID.keys.length, equals(42));
       for (final String country in countryIds) {
