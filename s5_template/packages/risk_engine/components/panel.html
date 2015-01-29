@@ -1,0 +1,52 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+
+<polymer-element name="risk-panel">
+  <template>
+    <link rel="stylesheet" href="../../../packages/bootstrap_for_pub/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../packages/bootstrap_for_pub/3.1.0/css/bootstrap-theme.min.css">
+
+    <template if='{{ !game.started && game.players.length >= 2 }}'>
+      <div style='text-align: center; padding: 1em;'>
+        <button class="btn btn-default" on-click='{{ startGame }}'>Start Game</button>
+      </div>
+    </template>
+
+    <template if='{{ playerId == game.activePlayerId }}'>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">It's up to you!</h3>
+        </div>
+        <div class="panel-body pre-scrollable">
+          <div style="text-align: center;">
+            <template if='{{ game.turnStep == "REINFORCEMENT" }}'>
+              <h3>Reinforcement</h3>
+              <p>Select one of your country to add one of the <strong>{{ game.players[playerId].reinforcement }}</strong> army left.</p>
+            </template>
+            <template if='{{ game.turnStep == "ATTACK" }}'>
+              <h3>Attack</h3>
+              <template if='{{ pendingMove == null }}'>
+                <p>Select a country from which you want to engage a battle.</p>
+                <button on-click="{{ endAttack }}">End of attacks</button>
+              </template>
+            </template>
+            <template if='{{ game.turnStep == "FORTIFICATION" }}'>
+              <h3>Fortification</h3>
+              <template if='{{ pendingMove == null }}'>
+                <p>Select a country from which you want to perform the last move to make for this turn.</p>
+                <button on-click="{{ endTurn }}">End of my turn</button>
+              </template>
+            </template>
+            <template if='{{ pendingMove != null }}'>
+              <div style='text-align: center; padding: 1em;'>
+                <p>How many armies do you want to move from <strong>{{ pendingMove.from }}</strong> to <strong>{{ pendingMove.to }}</strong>?</p>
+                <input type="range" value="{{ pendingMove.armiesToMove | asInteger }}" min="1" max="{{ pendingMove.maxArmies }}" />
+                <button on-click='{{ moveArmies }}'>Move {{ pendingMove.armiesToMove }} armies</button>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </template>
+  </template>
+  <script type="application/dart" src="panel.dart"></script>
+</polymer-element>

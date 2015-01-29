@@ -1,0 +1,89 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+
+<link rel="import" href="panel.html">
+
+<polymer-element name="risk-history">
+  <template>
+    <link rel="stylesheet" href="../../../packages/bootstrap_for_pub/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../packages/bootstrap_for_pub/3.1.0/css/bootstrap-theme.min.css">
+    <style>
+      .inline-player {
+        font-style: italic;
+      }
+
+      img {
+        width: 20px;
+      }
+
+      .pre-scrollable {
+        max-height: 200px;
+      }
+    </style>
+
+    <!-- Declare a reusable template -->
+    <template id="risk-player-inline">
+      <span class="inline-player"><img _src="img/avatars/{{ avatar }}" class="img-rounded" alt="Avatar"> {{ name }}</span>
+    </template>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">History</h3>
+      </div>
+      <div id="content" class="panel-body pre-scrollable">
+        <ul class="list-unstyled">
+          <template repeat="{{ event in game.events }}">
+            <template if="{{ event | isArmyMoved }}">
+              <li>
+                <template ref="risk-player-inline" bind="{{ game.players[event.playerId] }}"></template> moved {{ event.armies }} armies from {{ event.from }} to {{ event.to }}.
+              </li>
+            </template>
+            <template if="{{ event | isArmyPlaced }}">
+              <li>
+                <template ref="risk-player-inline" bind="{{ game.players[event.playerId] }}"></template> put an army on {{ event.country }}.
+              </li>
+            </template>
+            <template if="{{ event | isBattleEnded }}">
+              <li>
+                <template ref="risk-player-inline" bind="{{ game.players[event.attacker.playerId] }}"></template> attacked from {{ event.attacker.country }} to {{ event.defender.country }} (owned by <template ref="risk-player-inline" bind="{{ game.players[event.defender.playerId] }}"></template>).
+                The dices are {{ event.attacker.dices }} for attacker vs. {{ event.defender.dices }} for defender.
+                <template if="{{ event.conquered }}">
+                   The country has been conquered.
+                </template>
+                <template if="{{ !event.conquered }}">
+                  {{ event.attacker.remainingArmies }} armies remained for <template ref="risk-player-inline" bind="{{ game.players[event.attacker.playerId] }}"></template>
+                  and {{ event.defender.remainingArmies }} armies remained for <template ref="risk-player-inline" bind="{{ game.players[event.defender.playerId] }}"></template>
+               </template>
+              </li>
+            </template>
+            <template if="{{ event | isGameStarted }}">
+              <li>
+                The game started.
+              </li>
+            </template>
+            <template if="{{ event | isNextPlayer }}">
+              <li>
+                <template ref="risk-player-inline" bind="{{ game.players[event.playerId] }}"></template> played.
+              </li>
+            </template>
+            <template if="{{ event | isNextStep }}">
+              <li>
+                Next step.
+              </li>
+            </template>
+            <template if="{{ event | isPlayerJoined }}">
+              <li>
+                <template ref="risk-player-inline" bind="{{ game.players[event.playerId] }}"></template> joined the game.
+              </li>
+            </template>
+            <template if="{{ event | isSetupEnded }}">
+              <li>
+                Setup ended.
+              </li>
+            </template>
+          </template>
+        </ul>
+      </div>
+    </div>
+  </template>
+  <script type="application/dart" src="history.dart"></script>
+</polymer-element>
