@@ -90,7 +90,7 @@ The registration form will appear in a modal panel. We will first create a `<ris
     </style>
 
     <div id="panel">
-      <h4 id="title">{{ title }}</h4>
+      <h4 id="title">{{ header }}</h4>
       <content></content>
     </div>
   </template>
@@ -106,7 +106,7 @@ import 'package:polymer/polymer.dart';
 @CustomTag('risk-modal')
 class RiskModal extends PolymerElement {
   @published
-  String title;
+  String header;
 
   RiskModal.created(): super.created();
 }
@@ -120,7 +120,7 @@ Key information:
 ```html
 <link rel="import" href="modal.html">
 <!-- .... -->
-<risk-modal title="Title of the modal">Content as <b>HTML</b></risk-modal>
+<risk-modal header="Title of the modal">Content as <b>HTML</b></risk-modal>
 ```
 
 &rarr; Run in Dartium
@@ -140,7 +140,7 @@ You will now improve the modal panel to allow it to be closable.
       <template if="{{ closable }}">
         <button id="close" on-click="{{ close }}">&times;</button>
       </template>
-      <h4 id="title">{{ title }}</h4>
+      <h4 id="title">{{ header }}</h4>
       <content></content>
     </div>
 ```
@@ -256,7 +256,7 @@ class RiskRegistration extends PolymerElement {
 ```html
     <link rel="import" href="registration.html">
     <!-- .... -->
-    <risk-modal title="Player registration">
+    <risk-modal header="Player registration">
       <risk-registration></risk-registration>
     </risk-modal>
 ```

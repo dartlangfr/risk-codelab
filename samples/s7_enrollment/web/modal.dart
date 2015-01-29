@@ -3,7 +3,7 @@ import 'package:polymer/polymer.dart';
 @CustomTag('risk-modal')
 class RiskModal extends PolymerElement {
   @published
-  String title;
+  String header;
 
   @published
   bool closable;

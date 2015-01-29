@@ -50,7 +50,7 @@ _**Keywords**: WebSocket client, enjoy_
     </section>
 
     <template if="{{ !game.started && game.players[playerId] == null }}">
-      <risk-modal title="Player registration">
+      <risk-modal header="Player registration">
         <risk-registration on-done='{{ joinGame }}'></risk-registration>
       </risk-modal>
     </template>
