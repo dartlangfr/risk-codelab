@@ -38,8 +38,9 @@ abstract class AbstractRiskBoardElement extends PolymerElement {
       if (countryId == selectedCountryId) return countryUnselect; else if (canAttackFrom(countryId)) return countrySelect; else if (selectedCountryId != null && canAttackTo(
           selectedCountryId, countryId)) return countryAttack;
     } else if (turnStep == RiskGameState.TURN_STEP_FORTIFICATION) {
-      if (countryId == selectedCountryId) return countryUnselect; else if (canFortifyFrom(countryId)) return countrySelect; else if (selectedCountryId != null && canFortifyTo(
-          selectedCountryId, countryId)) return countryMove;
+      if (countryId == selectedCountryId) return countryUnselect; 
+      else if (selectedCountryId != null && canFortifyTo(selectedCountryId, countryId)) return countryMove;
+      else if (canFortifyFrom(countryId)) return countrySelect; 
     }
     return countryUnselect;
   }
